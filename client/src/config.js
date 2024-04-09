@@ -1,5 +1,5 @@
 const config = {
-    api: 'http://64.226.83.25:1337'
+    api: import.meta.env.VITE_STRAPI_URL
 }
 
 export default config;
