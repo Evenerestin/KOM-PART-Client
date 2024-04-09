@@ -1,0 +1,141 @@
+/* ---------------------- emptyBlogEntryPage ---------------------- */
+
+.emptyBlogEntryPage {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.emptyBlogEntryPage > .content {
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+}
+.emptyBlogEntryPage > .content #errorIcon {
+  width: 2rem;
+  height: auto;
+}
+.emptyBlogEntryPage > .content p {
+  /* white-space: nowrap; */
+  margin-left: 2rem;
+}
+
+.emptyBlogEntryPage button {
+  padding: 1rem 2rem;
+  font-weight: 500;
+  border-radius: 2px;
+  border: 1px solid black;
+  transition: margin-left 1s ease;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.emptyBlogEntryPage button:hover {
+  margin-left: 2rem;
+}
+
+/* ---------------------- blogEntryPage ---------------------- */
+
+.blogEntryPage {
+  min-height: 100vh;
+}
+
+.blogEntryPage .blogBanner {
+  padding: 8rem 5rem 2rem;
+  background: url(/blogBanner.jpg) bottom/cover no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+.blogEntryPage .blogBanner h1 {
+  color: white;
+  font-size: 2.5rem;
+  border-bottom: 1px solid white;
+}
+.blogEntryPage .blogBanner h3 {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: white;
+}
+
+.blogEntryPage .blogContent {
+  margin: 2rem;
+  justify-content: space-evenly;
+}
+
+.blogContent .cover {
+  background-color: white;
+  height: auto;
+  width: clamp(400px, 30%, 900px);
+  border-radius: 0.3rem;
+}
+
+.blogContent .cover img {
+  height: auto;
+  width: 80%;
+  margin: auto;
+}
+
+.blogContent .entryMarkdownContent {
+  width: 50%;
+  margin: 2rem 0;
+  line-height: 1.2rem;
+}
+.blogContent .entryMarkdownContent p {
+  margin: 1rem 0;
+}
+.blogContent .entryMarkdownContent ul {
+  margin: 2rem 3rem;
+}
+.blogContent .entryMarkdownContent p.publicationDate {
+  font-size: 0.6rem;
+  color: grey;
+}
+.blogContent .mediaFiles {
+  margin-top: 3rem;
+}
+.blogContent .mediaFiles a {
+  display: block;
+  text-decoration: none;
+  color: rgb(120 181 201);
+  font-weight: 600;
+  padding: 5px;
+  transition: color 0.5s ease;
+  cursor: pointer;
+}
+
+.blogContent .mediaFiles a:hover {
+  color: black;
+}
+
+/* ---------------------- media phone ---------------------- */
+
+@media screen and (max-width: 767px) {
+  .blogContent {
+    flex-direction: column;
+    align-items: center;
+  }
+  .blogContent .cover {
+    width: 80vw;
+  }
+
+  .blogContent .entryMarkdownContent {
+    width: fit-content;
+    padding: 0 2rem;
+  }
+}
+
+/* ---------------------- media tablet ---------------------- */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .blogContent {
+    flex-direction: column;
+    align-items: center;
+  }
+  .blogContent .cover {
+    width: 80vw;
+  }
+
+  .blogContent .entryMarkdownContent {
+    width: fit-content;
+    padding: 0 4rem;
+  }
+}

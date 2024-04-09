@@ -1,0 +1,103 @@
+footer {
+  background: rgb(17, 17, 17);
+  padding: 3rem 3rem 0 3rem;
+}
+
+footer h3 {
+  color: var(--light-secondary);
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+footer p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1rem;
+  color: var(--light-secondary);
+  font-size: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+footer .introduction p,
+footer .openingHours p {
+  padding-bottom: 0;
+}
+
+footer .copyright {
+  padding: 2rem 0 0.5rem;
+}
+
+footer button {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1rem;
+  color: var(--light-secondary);
+  font-size: 0.8rem;
+  padding-bottom: 0.4rem;
+}
+
+.footerSummary {
+  justify-content: space-evenly;
+}
+
+.footerColumn {
+  max-width: 20vw;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerColumn .logo {
+  fill: rgb(138, 138, 138);
+  transform: scale(0.6);
+  margin-bottom: 1rem;
+}
+
+li.footerMenuItem {
+  list-style: none;
+}
+
+li.footerMenuItem button {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--light-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition:
+    color 0.3s,
+    font-weight 0.3s;
+}
+li.footerMenuItem button:hover {
+  color: var(--accent-secondary);
+  font-weight: 600;
+}
+
+.copyright p:nth-child(2) {
+  margin-left: 2rem;
+  color: rgb(17, 17, 17);
+  transition: color 1s ease-in;
+}
+
+.copyright p:nth-child(2):hover {
+  color: var(--font-dark);
+}
+
+/* ---------------------- media phone ---------------------- */
+
+@media screen and (max-width: 767px) {
+  .footerSummary {
+    flex-direction: column;
+  }
+  .footerColumn {
+    max-width: 90vw;
+    margin: 2rem 0;
+  }
+}

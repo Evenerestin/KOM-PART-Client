@@ -1,0 +1,181 @@
+/* ---------------------- contactBanner ---------------------- */
+
+.contactBanner {
+  background: url(/contactBanner.jpg) top/cover no-repeat;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+  padding-top: 5rem;
+  transition: height 1s ease;
+}
+
+.contactBanner.scrolled {
+  height: 30vh;
+}
+
+.contactBanner.scrolled h1,
+.contactBanner.scrolled h2 {
+  opacity: 0;
+}
+
+.contactBanner h1,
+.contactBanner h2 {
+  color: white;
+  transition: opacity 0.5s ease-in;
+  text-align: center;
+}
+
+.contactBanner h2 {
+  width: 60%;
+  margin-top: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+}
+
+/* ---------------------- contactInformations ---------------------- */
+
+.contactInformations {
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem 5vw;
+  min-height: 40vh;
+  height: fit-content;
+}
+
+.contactHeader {
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 60vw;
+}
+
+.contactHeaderContent {
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.contactHeaderContent p {
+  color: var(--font-dark);
+}
+
+.contactHeaderContent .contactIcon {
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 2rem;
+  fill: var(--accent-secondary);
+  transition: all 0.5s ease;
+}
+
+.contactIcon #locationOutlineIcon {
+  width: 45px;
+  height: 45px;
+}
+
+.contactIcon #phoneOutlineIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.contactIcon #mailOutlineIcon {
+  width: 45px;
+  height: 45px;
+}
+
+.contactIcon:hover {
+  transform: scale(1.2);
+  fill: grey;
+}
+
+.contactInformations img {
+  max-width: 100%;
+  width: 15vw;
+  height: auto;
+  box-shadow: 0 0 10px rgb(200, 200, 200);
+}
+
+/* ---------------------- lovationInformations ---------------------- */
+
+.locationInformations {
+  height: fit-content;
+  padding: 1rem 0;
+}
+
+.locationInformations .map iframe {
+  height: 80vh;
+  max-height: 30rem;
+  width: 80vw;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+/* ---------------------- utilities ---------------------- */
+
+.flex {
+  display: flex;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------- media phone ---------------------- */
+
+@media screen and (max-width: 767px) {
+  .contactInformations {
+    padding: 0;
+    margin: 2rem 0 1rem;
+  }
+  .contactHeader {
+    flex-direction: column;
+    width: fit-content;
+    text-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 1;
+  }
+  .contactHeaderContent {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  .contactInformations img {
+    display: none;
+  }
+  .locationInformations .map iframe {
+    width: 90vw;
+    max-height: 18rem;
+  }
+}
+
+/* ---------------------- media tablet ---------------------- */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .contactInformations {
+    padding: 0;
+    margin: 2rem 0 1rem;
+  }
+  .contactHeader {
+    flex-direction: column;
+    width: fit-content;
+    text-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+  }
+  .contactHeaderContent {
+    background: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    padding: 2rem 0;
+    border-radius: 0.3rem;
+  }
+  .contactInformations img {
+    width: 45vw;
+  }
+}
+
+/* ---------------------- media large desktop ---------------------- */
+
+@media screen and (min-width: 2000px) {
+}

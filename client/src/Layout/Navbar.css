@@ -1,0 +1,276 @@
+nav {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  transition: box-shadow 1s ease;
+}
+
+nav.scrolled {
+  box-shadow: 0 0 20px rgba(175, 175, 175, 0.534);
+}
+
+/* ---------------------- contact ---------------------- */
+
+.contactInfo {
+  background: var(--dark);
+  padding: 3px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.contactInfo p {
+  color: white;
+}
+
+.contactInfo div {
+  margin-right: 3rem;
+  align-items: center;
+}
+
+.contactInfo #phoneIcon,
+.contactInfo #mailIcon {
+  margin-right: 1rem;
+  width: 15px;
+  height: 15px;
+  fill: white;
+}
+
+/* ---------------------- navBar ---------------------- */
+
+.navBar {
+  justify-content: space-between;
+  padding: clamp(5px, 2vh, 2rem) 3.5rem;
+  background: white;
+  transition: padding 0.3s ease;
+  align-items: center;
+}
+
+nav.scrolled .navBar {
+  padding: 0.2% 40px;
+}
+
+.navBar .logo {
+  fill: #d10e0e;
+}
+
+/* ---------------------- navigation ---------------------- */
+
+.navigation ul {
+  gap: 4rem;
+}
+
+li.menuItem {
+  list-style: none;
+}
+li.menuItem button {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgb(38, 37, 48);
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition:
+    color 0.3s ease-in,
+    font-weight 0.3s ease-in;
+}
+li.menuItem button:hover,
+li.menuItem button:focus {
+  color: var(--accent-secondary);
+  font-weight: 600;
+}
+
+li.menuItem .active button {
+  color: var(--accent-secondary);
+  font-weight: 600;
+}
+
+/* ---------------------- hamburgerIcon ---------------------- */
+
+.hamburgerIcon {
+  width: 40px;
+  height: 30px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.hamburgerIcon span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: var(--accent-secondary);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.hamburgerIcon span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburgerIcon span:nth-child(2),
+.hamburgerIcon span:nth-child(3) {
+  top: 12px;
+}
+
+.hamburgerIcon span:nth-child(4) {
+  top: 24px;
+}
+
+.hamburgerIcon.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.hamburgerIcon.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.hamburgerIcon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.hamburgerIcon.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+/* ---------------------- navigationMobile ---------------------- */
+
+.navigationMobile {
+  position: fixed;
+  z-index: 5;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.9);
+  top: 0;
+  width: 0;
+  right: 0;
+  transition: width 1s ease;
+  align-items: center;
+  display: flex;
+}
+
+.navigationMobile.open {
+  width: 80vw;
+}
+
+.navigationMobile ul {
+  margin: 5rem 6rem 0;
+  height: 70%;
+  right: 0;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  text-wrap: nowrap;
+}
+
+.navigationMobile .menuItem button {
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 5rem;
+}
+
+/* ---------------------- media phone ---------------------- */
+
+@media screen and (max-width: 767px) {
+  .contactInfo {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .contactInfo div {
+    margin-right: 1rem;
+  }
+
+  .navigationMobile .menuItem button {
+    font-size: 1.5rem;
+  }
+
+  .navBar {
+    justify-content: space-between;
+    padding: 0 2em;
+    background: white;
+    transition: padding 0.3s ease;
+    align-items: center;
+  }
+
+  nav.scrolled .navBar {
+    padding: clamp(5px, 1vh, 2rem) 2rem;
+  }
+
+  .navigationMobile {
+    justify-content: center;
+    transition: width 1s cubic-bezier(0.1, 0.1, 5.0, 0.1);
+  }
+  
+  .navigationMobile.open {
+    width: 100%;
+  }
+
+  .navigationMobile ul {
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-left: 100vw;
+    transition: margin-left 1s cubic-bezier(0.9, 0.9, 1.0, 0.9);
+    padding-left: 5vw;
+  }
+  .navigationMobile.open ul {
+    margin: 0;
+    margin-top: 2rem;
+    padding: 0;
+  }
+  .navigationMobile ul li button,
+  .navigationMobile ul li button:hover,
+  .navigationMobile ul li button:focus,
+  .navigationMobile ul li .active button {
+    font-weight: 700;
+  }
+}
+
+/* ---------------------- media tablet ---------------------- */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .contactInfo {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contactInfo div {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .navBar {
+    padding: clamp(5px, 2vh, 2rem) 3em;
+  }
+
+  nav.scrolled .navBar {
+    padding: clamp(5px, 1vh, 2rem) 3rem;
+  }
+}

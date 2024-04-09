@@ -1,0 +1,387 @@
+body {
+  scroll-snap-type: y proximity;
+  background: var(--light);
+}
+
+.servicePage {
+  position: relative;
+}
+
+/* ---------------------- sideBar ---------------------- */
+
+.sideBar {
+  position: fixed;
+  top: 50%;
+  left: -100%;
+  transform: translate(0, -50%);
+  background: var(--dark);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  transition: left 1s ease;
+  z-index: 1;
+}
+.sideBar.show {
+  left: 2rem;
+}
+.sideBar li:first-of-type,
+.sideBar li:last-of-type {
+  margin: 0.5rem 0;
+}
+.sideBar li:nth-of-type(2),
+.sideBar li:nth-of-type(3) {
+  margin: 2rem 0;
+}
+.sideBarItem {
+  align-items: center;
+  padding: 1rem;
+  list-style: none;
+}
+.sideBarItem:hover {
+  background: rgba(255, 255, 255, 0.068);
+  border-radius: 1rem;
+}
+.sideBarItem a {
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.sideBarItem p {
+  text-transform: uppercase;
+  color: grey;
+  width: 0;
+  text-overflow: ellipsis;
+  transition: all 0.8s cubic-bezier(0.175, 0.685, 0.32, 1);
+  overflow: hidden;
+  opacity: 0;
+}
+.sideBarItem:hover p {
+  color: white;
+}
+.sideBar:hover p {
+  width: min-content;
+  opacity: 1;
+  margin-left: 2rem;
+}
+.sideBar #serviceIcon,
+.sideBar #shopIcon,
+.sideBar #dataRecoveryIcon,
+.sideBar #internetIcon {
+  width: 20px;
+  height: 20px;
+  fill: grey;
+  margin: 0;
+  padding: 0;
+  transition: fill 0.8s cubic-bezier(0.175, 0.685, 0.32, 1);
+}
+
+.sideBarItem:hover #serviceIcon,
+.sideBarItem:hover #shopIcon,
+.sideBarItem:hover #dataRecoveryIcon,
+.sideBarItem:hover #internetIcon {
+  fill: var(--font-light);
+}
+
+.sideBarItem.active #serviceIcon,
+.sideBarItem.active #shopIcon,
+.sideBarItem.active #dataRecoveryIcon,
+.sideBarItem.active #internetIcon {
+  fill: var(--font-light);
+}
+
+/* ---------------------- serviceHeader ---------------------- */
+
+.servicesHeader div:first-child {
+  background: url(/servicesBanner.jpg) bottom/cover no-repeat;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+  padding-top: 5rem;
+  transition: height 1s ease;
+}
+
+.servicesHeader .banner.scrolled {
+  height: 30vh;
+}
+
+.servicesHeader .banner.scrolled h1,
+.servicesHeader .banner.scrolled h2 {
+  opacity: 0;
+}
+
+.servicesHeader .banner h1,
+.servicesHeader .banner h2 {
+  color: white;
+  transition: opacity 0.5s ease-in;
+  text-align: center;
+}
+
+.servicesHeader .banner h2 {
+  width: 60%;
+  margin-top: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+}
+
+.servicesHeader .content {
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 0 10%;
+  gap: clamp(0, 10vh, 2rem);
+}
+
+.servicesHeader .content p:first-of-type {
+  margin-bottom: 2rem;
+}
+
+.servicesHeader .content {
+  justify-content: center;
+  height: 40vh;
+}
+
+/* ---------------------- serviceSummary ---------------------- */
+
+.serviceSummary {
+  height: fit-content;
+  padding: 2rem 0;
+  background: rgb(82, 82, 82);
+  justify-content: center;
+  gap: 2rem;
+  background: url(/serviceSummaryBackground.jpg) center/cover no-repeat;
+}
+
+.serviceSummary .row {
+  justify-content: center;
+  gap: 5rem;
+}
+
+.serviceSummary .container {
+  width: 40vw;
+  padding: clamp(1rem, 10vh, 4rem) 5vw;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(0.2rem);
+  border-radius: 0.2rem;
+  transition: background 1s ease-out;
+}
+
+.serviceSummary .container:hover {
+  background: white;
+}
+
+.serviceSummary .container .title {
+  align-items: center;
+}
+
+.serviceSummary .container .title h3 {
+  color: var(--accent-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-left: 2rem;
+}
+
+.serviceSummary .container p {
+  color: var(--font-dark);
+  padding: 2rem 0 1rem;
+}
+
+/* ---------------------- serviceSection ---------------------- */
+
+.serviceSection {
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 0 5vw 0 calc(5vw + 2rem);
+  height: 100vh;
+  min-height: fit-content;
+  width: 100%;
+}
+
+.serviceSection h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.serviceSection h2 {
+  margin: 0 0 2rem;
+  color: var(--font-darker);
+}
+.serviceSection p {
+  color: var(--font-dark);
+}
+
+.serviceSection ol {
+  margin-left: 2rem;
+}
+
+.serviceSection ol li {
+  color: var(--font-dark);
+  margin: 1rem 0;
+}
+
+.serviceSection img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------------------- serviceSections ---------------------- */
+
+.serviceSection .header {
+  width: 40vw;
+  padding-left: 2rem;
+}
+
+.serviceSection#sales,
+.serviceSection#data {
+  margin: clamp(2rem, 15vh, 10rem) 0;
+}
+
+.serviceSection .imageContainer {
+  width: 30vw;
+}
+
+#internet .header li:last-of-type {
+  cursor: pointer;
+}
+
+#internet .header li:last-of-type a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  padding: 5px;
+  transition: color 0.5s ease;
+}
+
+#internet .header li:last-of-type a:hover {
+  color: rgb(120 181 201);
+}
+
+/* ---------------------- closingSection ---------------------- */
+
+.closingSection {
+  width: 100%;
+  height: 20vh;
+  background: url(/servicesBanner.jpg) bottom/cover no-repeat;
+}
+
+/* ---------------------- utilities ---------------------- */
+
+.flex {
+  display: flex;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------- media phone ---------------------- */
+
+@media screen and (max-width: 767px) {
+  .sideBar.show {
+    left: 0.3rem;
+  }
+  .sideBarItem {
+    align-items: center;
+    padding: 1rem 0.3rem;
+  }
+  .sideBarItem p {
+    display: none;
+  }
+  .servicesHeader .banner h2 {
+    width: 90%;
+    font-size: 1.2rem;
+  }
+  .servicesHeader .content {
+    height: fit-content;
+    padding: 4rem 2rem;
+  }
+  .serviceSummary {
+    height: fit-content;
+    padding: 4rem 1rem;
+    gap: 1rem;
+  }
+  .serviceSummary .row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .serviceSummary .container {
+    width: 90%;
+    padding: 2rem 2rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .serviceSummary .container p {
+    color: var(--font-darker);
+  }
+  .serviceSection {
+    height: max-content;
+    margin: 4rem 0;
+  }
+  .serviceSection#sales,
+  .serviceSection#data {
+    margin: 3rem 0;
+  }
+  .serviceSection .header {
+    width: 80vw;
+  }
+  .serviceSection .imageContainer {
+    display: none;
+  }
+}
+
+/* ---------------------- media tablet ---------------------- */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .sideBar.show {
+    left: 1rem;
+  }
+  .sideBarItem {
+    align-items: center;
+    padding: 1rem 0.5rem;
+  }
+  .sideBarItem p {
+    display: none;
+  }
+  .servicesHeader .banner h2 {
+    width: 90%;
+  }
+  .servicesHeader .content {
+    height: fit-content;
+    padding: 4rem 5rem;
+  }
+  .serviceSummary {
+    height: fit-content;
+    padding: 4rem 1rem;
+    gap: 1rem;
+  }
+  .serviceSummary .row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .serviceSummary .container {
+    width: 90%;
+    padding: 2rem 5rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .serviceSection {
+    margin: 3rem 0;
+    height: max-content;
+  }
+  .serviceSection .header {
+    width: 80vw;
+  }
+  .serviceSection .imageContainer {
+    display: none;
+  }
+}
+
+/* ---------------------- media large desktop ---------------------- */
+
+@media screen and (min-width: 2000px) {
+}

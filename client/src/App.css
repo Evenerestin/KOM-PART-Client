@@ -1,0 +1,126 @@
+/* ---------------------- default ---------------------- */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-family: "Genos", sans-serif;
+  letter-spacing: 2px;
+  font-size: 4rem;
+  color: var(--font-darker);
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--font-darker);
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2.5px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--font-darker);
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--font-darker);
+}
+
+li {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--font-darker);
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--font-darker);
+  cursor: pointer;
+}
+
+/* ---------------------- default media queries ---------------------- */
+
+@media screen and (max-width: 1023px) {
+ p {
+  font-size: 1rem;
+ }
+}
+
+@media screen and (min-width: 2000px) {
+  *,
+  *::after,
+  *::before {
+    font-size: 17px;
+  }
+
+  p, li, button {
+    font-size: 1.2rem;
+  }
+
+
+  h1 {
+    font-size: 5rem;
+  }
+  
+  h2 {
+    font-size: 3rem;
+  }
+  
+  h3 {
+    font-size: 1.6rem;
+  }
+
+}
+
+/* ---------------------- root ---------------------- */
+
+:root {
+  --light: rgb(239, 240, 243);
+  --dark: rgb(34, 34, 34);
+
+  --font-light: white;
+  --font-dark: rgb(81, 81, 81);
+  --font-darker: rgb(11, 14, 22);
+
+  --light-secondary: rgb(138, 138, 138);
+
+  --accent-primary: rgb(120, 128, 241);
+  --accent-secondary: rgb(219, 17, 17);
+}
+
+/* ---------------------- utilities ---------------------- */
+
+.flex {
+  display: flex;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.gridCenter {
+  display: grid;
+  place-content: center;
+}

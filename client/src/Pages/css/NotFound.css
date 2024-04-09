@@ -1,0 +1,37 @@
+.notFoundPage {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFoundPage > .content {
+    margin-bottom: 5rem;
+}
+
+.notFoundPage > .content #errorIcon {
+  width: 1.5rem;
+  height: auto;
+}
+
+.notFoundPage p:first-child {
+    font-size: 6rem;
+    font-weight: 700;
+}
+
+.notFoundPage > .content p {
+  margin-left: 1rem;
+  /* font-weight: 600; */
+}
+
+.notFoundPage button {
+  padding: 1rem 2rem;
+  font-weight: 500;
+  border-radius: 2px;
+  border: 1px solid black;
+  transition: margin-left 1s ease;
+  cursor: pointer;
+}
+
+.notFoundPage button:hover {
+  margin-left: 2rem;
+}
