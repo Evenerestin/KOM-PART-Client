@@ -552,7 +552,4 @@ header button:focus #phoneIcon {
   header button {
     font-size: 5rem;
   }
-  #aboutUs {
-    flex-direction: column;
-  }
 }

@@ -30,14 +30,14 @@ const BlogEntry = () => {
 
   return (
     <div className="blogEntryPage">
-      <div className="blogBanner">
+      <div className="blogBanner flexColumn">
         <h1>{matchedBlog.attributes.title}</h1>
         <h3>{matchedBlog.attributes.subtitle}</h3>
       </div>
       <div className="blogContent flex">
         <div className="cover gridCenter">
           <img
-            src={`http://localhost:1337${matchedBlog.attributes.cover.data.attributes.url}`}
+            src={`http://64.226.83.25:1337${matchedBlog.attributes.cover.data.attributes.url}`}
             alt=""
           />
         </div>

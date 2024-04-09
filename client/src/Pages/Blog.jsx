@@ -36,7 +36,7 @@ const Blog = () => {
         >
           <div className="blogCover gridCenter">
             <img
-              src={`http://localhost:1337${attributes.cover.data.attributes.url}`}
+              src={`http://64.226.83.25:1337${attributes.cover.data.attributes.url}`}
               alt=""
             />
           </div>
