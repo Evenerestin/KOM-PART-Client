@@ -61,8 +61,6 @@ button {
 
 /* ---------------------- default media queries ---------------------- */
 
-/* ---------------------- media phone ---------------------- */
-
 @media screen and (max-width: 767px) {
   *,
   *::after,
