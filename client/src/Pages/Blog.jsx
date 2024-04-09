@@ -2,6 +2,7 @@ import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
 import "./css/Blog.css";
+import config from "../config.js";
 
 const Blog = () => {
   let { loading, error, blogs } = useFetch();
@@ -35,8 +36,14 @@ const Blog = () => {
           to={`/blog/${attributes.title}`}
         >
           <div className="blogCover gridCenter">
-            <img
+            {/* <img
+              loading="lazy"
               src={`http://64.226.83.25:1337${attributes.cover.data.attributes.url}`}
+              alt=""
+            /> */}
+            <img
+              loading="lazy"
+              src={`${config.api}${attributes.cover.data.attributes.url}`}
               alt=""
             />
           </div>

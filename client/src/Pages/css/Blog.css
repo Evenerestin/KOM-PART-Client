@@ -36,6 +36,7 @@
   padding: 8.5rem 0 2rem;
   min-height: 100vh;
   align-items: center;
+  justify-content: space-evenly;
   gap: 1rem;
 }
 
@@ -50,7 +51,7 @@
 }
 
 .blogPage .blogHeader:hover {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(1rem);
 }
 
@@ -61,6 +62,7 @@
   background: white;
   border-radius: 0.3rem;
   margin: 0.5rem;
+  box-shadow: 0 0 1px 1px rgb(230, 231, 233);
 }
 
 .blogHeader .blogCover img {
@@ -81,8 +83,8 @@ a.blogHeader {
 
 .blogHeader .blogContent h2 {
   font-size: 1.1rem;
-  border-bottom: 1px solid var(--accent-primary);
-  color: var(--accent-primary);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   padding: 1rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -90,8 +92,8 @@ a.blogHeader {
 }
 
 .blogHeader:hover h2 {
-  border-bottom: 1px solid white;
-  color: white;
+  border-bottom: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 .blogHeader .blogContent h3 {

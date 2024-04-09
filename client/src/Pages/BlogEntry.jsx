@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import ErrorIcon from "../Assets/ErrorIcon";
 import useFetch from "../Hooks/useFetch";
 import "./css/BlogEntry.css";
+import config from "../config.js";
 
 const BlogEntry = () => {
   let { loading, error, blogs } = useFetch();
@@ -36,8 +37,12 @@ const BlogEntry = () => {
       </div>
       <div className="blogContent flex">
         <div className="cover gridCenter">
-          <img
+          {/* <img
             src={`http://64.226.83.25:1337${matchedBlog.attributes.cover.data.attributes.url}`}
+            alt=""
+          /> */}
+          <img
+            src={`${config.api}${matchedBlog.attributes.cover.data.attributes.url}`}
             alt=""
           />
         </div>

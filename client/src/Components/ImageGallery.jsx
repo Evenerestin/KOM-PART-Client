@@ -57,7 +57,7 @@ const ImageGallery = ({ images, documentType }) => {
                 key={index}
                 onClick={() => handleOpenModal(index)}
               >
-                <img src={slide.img} alt={documentType} />
+                <img src={slide.img} alt={documentType} loading="lazy"/>
               </div>
             );
           })}
