@@ -61,6 +61,16 @@ button {
 
 /* ---------------------- default media queries ---------------------- */
 
+/* ---------------------- media phone ---------------------- */
+
+@media screen and (max-width: 767px) {
+  *,
+  *::after,
+  *::before {
+    font-size: 14px;
+  }
+}
+
 @media screen and (max-width: 1023px) {
  p {
   font-size: 1rem;

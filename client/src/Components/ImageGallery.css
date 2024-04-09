@@ -74,3 +74,15 @@
   align-items: center;
   justify-content: center;
 }
+
+/* ---------------------- media phone ---------------------- */
+
+@media screen and (max-width: 767px) {
+  .galleryContainer {
+    gap: 2rem;
+  }
+  .galleryContainer .singleImage img {
+    height: auto;
+    width: 70vw;
+  }
+}
