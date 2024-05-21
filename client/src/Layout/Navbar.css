@@ -208,27 +208,55 @@ li.menuItem .active button {
     margin-right: 1rem;
   }
 
+  .navBar a.logo svg {
+    height: 30px;
+    width: 130px;
+  }
+
   .navigationMobile .menuItem button {
     font-size: 1.5rem;
   }
 
   .navBar {
     justify-content: space-between;
-    padding: 0 2em;
+    padding: clamp(5px, 1vh, 2rem) 2rem;
+    /* padding: 0 2rem; */
     background: white;
     transition: padding 0.3s ease;
     align-items: center;
   }
 
   nav.scrolled .navBar {
-    padding: clamp(5px, 1vh, 2rem) 2rem;
+    padding: 0 2rem;
   }
 
   .navigationMobile {
     justify-content: center;
-    transition: width 1s cubic-bezier(0.1, 0.1, 5.0, 0.1);
+    transition: width 1s cubic-bezier(0.1, 0.1, 5, 0.1);
+  }
+
+  .hamburgerIcon {
+    width: 30px;
+    height: 22px;
   }
   
+  .hamburgerIcon span {
+    height: 3px;
+  }
+
+  .hamburgerIcon span:nth-child(1) {
+    top: 0px;
+  }
+
+  .hamburgerIcon span:nth-child(2),
+  .hamburgerIcon span:nth-child(3) {
+    top: 8px;
+  }
+
+  .hamburgerIcon span:nth-child(4) {
+    top: 16px;
+  }
+
   .navigationMobile.open {
     width: 100%;
   }
@@ -237,7 +265,7 @@ li.menuItem .active button {
     align-items: flex-start;
     justify-content: flex-end;
     margin-left: 100vw;
-    transition: margin-left 1s cubic-bezier(0.9, 0.9, 1.0, 0.9);
+    transition: margin-left 1s cubic-bezier(0.9, 0.9, 1, 0.9);
     padding-left: 5vw;
   }
   .navigationMobile.open ul {

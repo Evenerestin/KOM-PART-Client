@@ -399,6 +399,7 @@ header button:focus #phoneIcon {
     height: auto;
     position: relative;
     justify-content: center;
+    background-attachment: unset;
   }
   #service .header {
     width: 60vw;
