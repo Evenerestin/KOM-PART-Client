@@ -88,6 +88,14 @@
 .blogContent .entryMarkdownContent ol {
   margin: 2rem 3rem;
 }
+.blogContent .entryMarkdownContent h1,
+.blogContent .entryMarkdownContent h2,
+.blogContent .entryMarkdownContent h3,
+.blogContent .entryMarkdownContent h4,
+.blogContent .entryMarkdownContent h5,
+.blogContent .entryMarkdownContent h6 {
+  font-size: 1.5rem;
+}
 .blogContent .entryMarkdownContent p.publicationDate {
   font-size: 0.6rem;
   color: grey;
