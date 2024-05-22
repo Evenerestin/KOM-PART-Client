@@ -84,7 +84,8 @@
 .blogContent .entryMarkdownContent p {
   margin: 1rem 0;
 }
-.blogContent .entryMarkdownContent ul {
+.blogContent .entryMarkdownContent ul,
+.blogContent .entryMarkdownContent ol {
   margin: 2rem 3rem;
 }
 .blogContent .entryMarkdownContent p.publicationDate {
