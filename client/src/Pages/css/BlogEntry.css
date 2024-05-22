@@ -94,7 +94,12 @@
 .blogContent .entryMarkdownContent h4,
 .blogContent .entryMarkdownContent h5,
 .blogContent .entryMarkdownContent h6 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--font-darker);
 }
 .blogContent .entryMarkdownContent p.publicationDate {
   font-size: 0.6rem;
