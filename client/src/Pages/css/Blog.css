@@ -1,3 +1,74 @@
+/* ---------------------- loadingBlogPage ---------------------- */
+
+.loadingBlogPage {
+  background: url(/blogBackground.jpg) top/cover no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 8.5rem 0 2rem;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.blogEntrySkeleton {
+  width: clamp(25rem, 80%, 150rem);
+  height: 228.8px;
+  border-radius: 0.3rem;
+  position: relative;
+  background: var(--light);
+  backdrop-filter: blur(1rem);
+  padding: 0.5rem;
+}
+
+.loading {
+  background: linear-gradient(
+    45deg,
+    rgb(221, 221, 221),
+    rgb(240, 240, 240),
+    rgb(221, 221, 221),
+    rgb(240, 240, 240)
+  );
+  background-size: 200% 200%;
+  animation: loadingAnimation 2.25s ease infinite;
+}
+
+.blogEntrySkeleton > .blogCover {
+  width: 25%;
+  height: 100%;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 1px 1px rgb(230, 231, 233);
+}
+
+.blogEntrySkeleton > .blogContent {
+  position: relative;
+  box-shadow: 0 0 1px 1px rgb(230, 231, 233);
+  height: 1.5rem;
+  width: 75%;
+  margin: 1rem 3rem;
+  border-radius: 0.3rem;
+}
+.blogEntrySkeleton > .blogContent::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  height: 2px;
+  width: 100%;
+  border-radius: 0.3rem;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* ---------------------- emptyBlogPage ---------------------- */
 
 .emptyBlogPage {
