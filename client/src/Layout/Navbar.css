@@ -166,9 +166,8 @@ li.menuItem .active button {
 .navigationMobile {
   position: fixed;
   z-index: 5;
-  height: 100svh;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.9);
-  background-size: 200%;
   width: 0;
   right: 0;
   transition: width 1s ease;
