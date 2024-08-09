@@ -1,0 +1,6 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Disallow:
+
+Sitemap: https://komputerowyserwis.com/sitemap.xml
+Sitemap: https://www.komputerowyserwis.com/sitemap.xml
