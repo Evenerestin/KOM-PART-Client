@@ -11,15 +11,19 @@
 
 <h3>Technology Stack:</h3>
 <p>
-  HTML, SCSS, Vue.js, Vite.js <br />
-  Vercel Cloud Deployment
+   Frontend Stack: React.js, Vite, Strapi Headless CMS <br />
+   Backend Stack: Digital Ocean Droplet, Nginx web server, GitHub web hook <br />
+   Vercel cloud deployment
 </p>
 
 <br />
 
 <p>
-  Personal website for a <a href="https://dzieciom.pl">Fundacja Dzieciom „Zdążyć z Pomocą”</a> foundation beneficiary, <br />
-  ontaing information about the child, health conditions and foundation data
+  Business website for a computer service and internet provider company, <br />
+  containg data about the provided services, owned cerifications and contact information. <br />
+</p>
+<p>
+   Equipped with blog feature created via Strapi Headless CMS. 
 </p>
 
-<img src="https://github.com/user-attachments/assets/8780852b-47b7-49f5-bdb6-effb57ccb9f0" width="800px" height="auto"/>
+<img src="https://github.com/user-attachments/assets/0e65a70b-7827-4d73-8fca-dd01dac29a36" width="800px" height="auto"/>
