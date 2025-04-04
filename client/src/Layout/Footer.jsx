@@ -29,10 +29,14 @@ const Footer = () => {
           <h3>Kontakt</h3>
           <p>Adres: ul. Rynek 11, 44-240 Żory</p>
           <p>Tel: 32 435 77 55</p>
-          <p>Email: kom-part@pro.onet.pl</p>
+          <p>Email: zory.kompart@gmail.com</p>
           <div className="openingHours">
             <p>Godziny otwarcia serwisu:</p>
-            <p>Poniedziałek-Piątek: 11:00-17:00</p>
+            <p>Poniedziałek: 11:00-16:30</p>
+            <div>
+              <p>Wtorek-Piątek: 11:00-17:00</p>
+              <p>Sobota: Po wcześniejszym ustaleniu tel.</p>
+            </div>
           </div>
         </div>
         <div className="footerColumn">
@@ -51,7 +55,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyright flex">
-        <p>Copyright © 2024 Kom-part Serwis komputerowy</p>
+        <p>Copyright © 2025 Kom-part Serwis komputerowy</p>
         <p>Alicja Bieryt @Evenerestin</p>
       </div>
     </footer>

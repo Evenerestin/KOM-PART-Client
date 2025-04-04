@@ -50,6 +50,16 @@
   width: 60vw;
 }
 
+.openingHours {
+  margin-top: 1rem;
+}
+
+.openingHours > p:last-of-type {
+  margin-top: 0.5rem;
+  max-width: 15rem;
+  white-space: wrap;
+}
+
 .contactHeaderContent {
   align-items: center;
   margin: 0 1rem;

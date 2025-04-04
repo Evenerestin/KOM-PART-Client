@@ -37,7 +37,7 @@ const Navbar = () => {
           </div>
           <div className="flex">
             <MailIcon />
-            <p>kom-part@pro.onet.pl</p>
+            <p>zory.kompart@gmail.com</p>
           </div>
         </div>
         <div className="navBar flex">

@@ -25,7 +25,11 @@ const Contact = () => {
             </div>
             <div className="contactInformation">
               <p>Telefon: 32 435 77 55</p>
-              <p>Poniedziałek-Piątek: 11:00-17:00</p>
+              <div className="openingHours">
+                <p>Poniedziałek: 11:00-16:30</p>
+                <p>Wtorek-Piątek: 11:00-17:00</p>
+                <p>Sobota: Po wcześniejszym ustaleniu tel.</p>
+              </div>
             </div>
           </div>
           <div className="contactHeaderContent flexColumn">
@@ -33,7 +37,7 @@ const Contact = () => {
               <MailOutlineIcon />
             </div>
             <div className="contactInformation">
-              <p>Email: kom-part@pro.onet.pl</p>
+              <p>Email: zory.kompart@gmail.com</p>
             </div>
           </div>
           <div className="contactHeaderContent flexColumn">

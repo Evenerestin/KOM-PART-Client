@@ -25,7 +25,7 @@ const Home = () => {
         </div>
         <div className="flex">
           <ServicingIcon />
-          <h2>26 lat doświadczenia w serwisowaniu komputerów</h2>
+          <h2>28 lat doświadczenia w serwisowaniu komputerów</h2>
         </div>
         <p>Jesteśmy do waszej dyspozycji.</p>
         <Link to="/kontakt">
