@@ -1,65 +1,60 @@
 .logoSlidingContainer {
-    background: var(--light);
-    overflow: hidden;
-    width: 100%;
-    height: 25vh;
-    /* gap: 5rem; */
-    padding: 5vh 0;
-    justify-content: flex-start;
+  background: var(--light);
+  overflow: hidden;
+  width: 100%;
+  height: 25vh;
+  /* gap: 5rem; */
+  padding: 5vh 0;
+  justify-content: flex-start;
+}
+
+.logos {
+  width: 100%;
+  gap: 5rem;
+  animation: 20s slide linear infinite;
+  padding: 0 3rem;
+}
+
+.logos .logo {
+  width: 400px;
+  height: 100%;
+  /* height: 400px; */
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
   }
-  
-  .logos {
-    width: 100%;
-    gap: 5rem;
-    animation: 20s slide linear infinite;
-    padding: 0 3rem;
+  to {
+    transform: translateX(-100%);
   }
-  
-  .logos .logo {
-    width: 400px;
-    height: 100%;
-    /* height: 400px; */
-  }
-  
-  @keyframes slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  
-  .logo.amd {
-    background: url(/techLogoBackground/amd.png) center/contain no-repeat;
-  }
-  .logo.apple {
-    background: url(/techLogoBackground/apple.png) center/contain no-repeat;
-    transform: scale(0.5);
-  }
-  .logo.asus {
-    background: url(/techLogoBackground/asus.png) center/contain no-repeat;
-    /* transform: scale(1.2); */
-  }
-  .logo.dell {
-    background: url(/techLogoBackground/dell.png) center/contain no-repeat;
-  }
-  .logo.intel {
-    background: url(/techLogoBackground/intel.png) center/contain no-repeat;
-    transform: scale(0.5);
-  }
-  .logo.kingston {
-    background: url(/techLogoBackground/kingston.png) center/contain
-      no-repeat;
-    transform: scale(1.2);
-  }
-  .logo.nvidia {
-    background: url(/techLogoBackground/nvidia.png) center/contain
-      no-repeat;
-    /* transform: scale(1.2); */
-  }
-  
-  .flex {
-    display: flex;
-  }
-  
+}
+
+.logo.amd {
+  background: url(/logos/amd.png) center/contain no-repeat;
+}
+.logo.apple {
+  background: url(/logos/apple.png) center/contain no-repeat;
+  transform: scale(0.5);
+}
+.logo.asus {
+  background: url(/logos/asus.png) center/contain no-repeat;
+}
+.logo.dell {
+  background: url(/logos/dell.png) center/contain no-repeat;
+}
+.logo.intel {
+  background: url(/logos/intel.png) center/contain no-repeat;
+  transform: scale(0.5);
+}
+.logo.kingston {
+  background: url(/logos/kingston.png) center/contain no-repeat;
+  transform: scale(1.2);
+}
+.logo.nvidia {
+  background: url(/logos/nvidia.png) center/contain no-repeat;
+}
+
+.flex {
+  display: flex;
+}

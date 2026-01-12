@@ -53,7 +53,10 @@ const Contact = () => {
           </div>
         </div>
 
-        <img src="firm.jpg" alt="" />
+        <img
+          src="/images/contact/firm.jpg"
+          alt="Zdjęcie budynku firmy Kom-Part"
+        />
       </div>
 
       <div className="locationInformations gridCenter">

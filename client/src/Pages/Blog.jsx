@@ -39,8 +39,6 @@ const Blog = () => {
     console.log(error);
     return <NotFound />;
   }
-  // console.log(blogs);
-  // console.log(reversedBlogs);
 
   if (!Array.isArray(reversedBlogs) || reversedBlogs.length === 0) {
     return (
@@ -63,15 +61,10 @@ const Blog = () => {
           to={`/blog/${attributes.title}`}
         >
           <div className="blogCover gridCenter">
-            {/* <img
-              loading="lazy"
-              src={`http://64.226.83.25:1337${attributes.cover.data.attributes.url}`}
-              alt=""
-            /> */}
             <img
               loading="lazy"
+              aria-hidden="true"
               src={`${config.api}${attributes.cover.data.attributes.url}`}
-              alt=""
             />
           </div>
           <div className="blogContent flexColumn">
@@ -83,11 +76,6 @@ const Blog = () => {
               </ReactMarkdown>
               <p className="publicationDate">{attributes.publicationDate}</p>
             </div>
-            {/* <div className="flex">
-              <Link to={`/blog/${attributes.title}`}>
-              <button>Czytaj więcej...</button>
-              </Link>
-            </div> */}
           </div>
         </Link>
       ))}

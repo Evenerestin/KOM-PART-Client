@@ -1,17 +1,16 @@
 import ReactMarkdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
 import ErrorIcon from "../Assets/ErrorIcon";
+import config from "../config.js";
 import useFetch from "../Hooks/useFetch";
 import "./css/BlogEntry.css";
-import config from "../config.js";
 
 const BlogEntry = () => {
   let { loading, error, blogs } = useFetch();
   const { title } = useParams();
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Ładowanie...</p>;
   if (error) {
-    console.log(error);
-    return <p>Error fetching data</p>;
+    return <p>Błąd podczas pobierania danych</p>;
   }
   const matchedBlog = blogs.find((blog) => blog.attributes.title === title);
   console.log(matchedBlog);
@@ -37,13 +36,10 @@ const BlogEntry = () => {
       </div>
       <div className="blogContent flex">
         <div className="cover gridCenter">
-          {/* <img
-            src={`http://64.226.83.25:1337${matchedBlog.attributes.cover.data.attributes.url}`}
-            alt=""
-          /> */}
           <img
             src={`${config.api}${matchedBlog.attributes.cover.data.attributes.url}`}
-            alt=""
+            aria-hidden="true"
+            loading="lazy"
           />
         </div>
         <div className="entryMarkdownContent">

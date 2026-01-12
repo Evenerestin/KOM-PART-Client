@@ -46,8 +46,7 @@ const Home = () => {
 
       <div className="flex" id="aboutUs">
         <div className="photos flex">
-          <img src="aboutUs-1.jpg" alt="" />
-          <img src="aboutUs-2.jpg" alt="" />
+          <img src="/images/home/about.jpg" loading="lazy" aria-hidden={true} />
         </div>
         <div className="header flexColumn">
           <h3> - Rok założenia MCMXCVII - </h3>

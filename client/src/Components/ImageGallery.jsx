@@ -35,20 +35,18 @@ const ImageGallery = ({ images, documentType }) => {
       {openModal ? (
         <div className="modalBackdrop flex" onClick={handleCloseModal}>
           <div className="navigationArrow gridCenter" onClick={prevSlide}>
-            {/* <button> &lt; </button> */}
             <LeftArrow />
           </div>
           <div className="modalImage">
-            <img src={images[slideNumber].img} alt="" />
+            <img src={images[slideNumber].img} alt={images[slideNumber].alt} />
           </div>
           <div className="navigationArrow gridCenter" onClick={nextSlide}>
-            {/* <button> &gt; </button> */}
             <RightArrow />
           </div>
         </div>
       ) : null}
 
-      <div className="galleryContainer">
+      <div className="galleryContainer" aria-label={`Galeria: ${documentType}`}>
         {images &&
           images.map((slide, index) => {
             return (
@@ -57,7 +55,7 @@ const ImageGallery = ({ images, documentType }) => {
                 key={index}
                 onClick={() => handleOpenModal(index)}
               >
-                <img src={slide.img} alt={documentType} loading="lazy"/>
+                <img src={slide.img} alt={slide.alt} loading="lazy" />
               </div>
             );
           })}
@@ -70,6 +68,7 @@ ImageGallery.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
       img: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
     })
   ).isRequired,
   documentType: PropTypes.string.isRequired,

@@ -14,7 +14,7 @@ html {
 
 header {
   height: 100vh;
-  background: url(/headerBanner.jpg) center/cover no-repeat;
+  background: url(/images/home/banner.jpg) center/cover no-repeat;
   scroll-snap-align: start;
   width: auto;
   text-align: center;
@@ -232,7 +232,7 @@ header button:focus #phoneIcon {
 #service {
   padding: 0 5vw;
   justify-content: space-evenly;
-  background: url(/service.jpg) center/cover no-repeat;
+  background: url(/images/home/service.jpg) center/cover no-repeat;
   background-attachment: fixed;
   height: 60vh;
   width: 100%;
@@ -379,7 +379,6 @@ header button:focus #phoneIcon {
     margin-right: 2rem;
   }
   header h2 {
-    text-wrap: wrap;
     width: 60vw;
     font-size: 1.5rem;
   }
@@ -482,7 +481,6 @@ header button:focus #phoneIcon {
     left: 1rem;
   }
   header h2 {
-    text-wrap: wrap;
     width: 70vw;
   }
   #aboutUs {

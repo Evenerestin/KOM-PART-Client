@@ -1,7 +1,7 @@
 /* ---------------------- contactBanner ---------------------- */
 
 .contactBanner {
-  background: url(/contactBanner.jpg) top/cover no-repeat;
+  background: url(/images/contact/banner.jpg) top/cover no-repeat;
   justify-content: center;
   align-items: center;
   height: 60vh;
@@ -142,7 +142,6 @@
   .contactHeader {
     flex-direction: column;
     width: fit-content;
-    text-wrap: nowrap;
     align-items: center;
     gap: 1rem;
     flex-shrink: 1;
@@ -170,7 +169,6 @@
   .contactHeader {
     flex-direction: column;
     width: fit-content;
-    text-wrap: nowrap;
     align-items: center;
     gap: 1rem;
   }
@@ -183,9 +181,4 @@
   .contactInformations img {
     width: 45vw;
   }
-}
-
-/* ---------------------- media large desktop ---------------------- */
-
-@media screen and (min-width: 2000px) {
 }

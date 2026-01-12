@@ -163,12 +163,20 @@ const Services = () => {
           </ol>
         </div>
         <div className="imageContainer">
-          <img src="/servicing.jpg" alt="" />
+          <img
+            src="/images/services/servicing.jpg"
+            aria-hidden="true"
+            loading="lazy"
+          />
         </div>
       </div>
       <div className="serviceSection flex" id="sales">
         <div className="imageContainer">
-          <img src="/sales.jpg" alt="" />
+          <img
+            src="/images/services/sales.jpg"
+            aria-hidden="true"
+            loading="lazy"
+          />
         </div>
         <div className="header flexColumn">
           <h2>Sprzedaż, modernizacja</h2>
@@ -224,12 +232,20 @@ const Services = () => {
           </ol>
         </div>
         <div className="imageContainer">
-          <img src="data.jpg" alt="" />
+          <img
+            src="/images/services/data.jpg"
+            aria-hidden="true"
+            loading="lazy"
+          />
         </div>
       </div>
       <div className="serviceSection flex" id="internet">
         <div className="imageContainer">
-          <img src="internet.jpg" alt="" />
+          <img
+            src="/images/services/internet.jpg"
+            aria-hidden="true"
+            loading="lazy"
+          />
         </div>
         <div className="header flexColumn">
           <h2>Internet</h2>
