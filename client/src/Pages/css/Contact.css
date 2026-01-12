@@ -1,7 +1,7 @@
 /* ---------------------- contactBanner ---------------------- */
 
 .contactBanner {
-  background: url(/Images/Contact/banner.jpg) top/cover no-repeat;
+  background: url(/images/contact/banner.jpg) top/cover no-repeat;
   justify-content: center;
   align-items: center;
   height: 60vh;

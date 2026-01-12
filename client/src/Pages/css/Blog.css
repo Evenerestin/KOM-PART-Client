@@ -1,7 +1,7 @@
 /* ---------------------- loadingBlogPage ---------------------- */
 
 .loadingBlogPage {
-  background: url(/Images/Blog/background.jpg) top/cover no-repeat;
+  background: url(/images/blog/background.jpg) top/cover no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
   padding: 8.5rem 0 2rem;
@@ -102,7 +102,7 @@
 /* ---------------------- blogPage ---------------------- */
 
 .blogPage {
-  background: url(/Images/Blog/background.jpg) top/cover no-repeat;
+  background: url(/images/blog/background.jpg) top/cover no-repeat;
   background-attachment: fixed;
   padding: 8.5rem 0 2rem;
   min-height: 100vh;

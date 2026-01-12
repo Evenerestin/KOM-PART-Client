@@ -164,7 +164,7 @@ const Services = () => {
         </div>
         <div className="imageContainer">
           <img
-            src="/Images/Services/servicing.jpg"
+            src="/images/services/servicing.jpg"
             aria-hidden="true"
             loading="lazy"
           />
@@ -173,7 +173,7 @@ const Services = () => {
       <div className="serviceSection flex" id="sales">
         <div className="imageContainer">
           <img
-            src="/Images/Services/sales.jpg"
+            src="/images/services/sales.jpg"
             aria-hidden="true"
             loading="lazy"
           />
@@ -233,7 +233,7 @@ const Services = () => {
         </div>
         <div className="imageContainer">
           <img
-            src="/Images/Services/data.jpg"
+            src="/images/services/data.jpg"
             aria-hidden="true"
             loading="lazy"
           />
@@ -242,7 +242,7 @@ const Services = () => {
       <div className="serviceSection flex" id="internet">
         <div className="imageContainer">
           <img
-            src="/Images/Services/internet.jpg"
+            src="/images/services/internet.jpg"
             aria-hidden="true"
             loading="lazy"
           />
