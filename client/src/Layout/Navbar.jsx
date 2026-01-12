@@ -69,31 +69,50 @@ const Navbar = () => {
           )}
         </div>
       </nav>
-      {isMobile ? (
-        <div className="navigationMobile">
-          <ul className="flexColumn">
-            <li className="menuItem" onClick={closeMenu}>
-              <Link
-                to="/"
-                className={location.pathname === "/" ? "active" : ""}
-              >
-                <button>Strona główna</button>
-              </Link>
-            </li>
-            {MenuData.map((menu, index) => (
-              <li className="menuItem" onClick={closeMenu} key={index}>
+      {isMobile && (
+        <>
+          {/* Overlay for background blur and click-to-close */}
+          <div
+            className={`mobileNavOverlay${menuOpen ? " open" : ""}`}
+            onClick={closeMenu}
+            aria-hidden={!menuOpen}
+            tabIndex={menuOpen ? 0 : -1}
+          />
+          <nav
+            className={`navigationMobile${menuOpen ? " open" : ""}`}
+            aria-label="Menu mobilne"
+            role="dialog"
+            aria-modal="true"
+          >
+            <button
+              className="closeMobileNav"
+              onClick={closeMenu}
+              aria-label="Zamknij menu"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+            <ul className="flexColumn">
+              <li className="menuItem" onClick={closeMenu}>
                 <Link
-                  to={menu.url}
-                  className={location.pathname === menu.url ? "active" : ""}
+                  to="/"
+                  className={location.pathname === "/" ? "active" : ""}
                 >
-                  <button>{menu.title}</button>
+                  <button>Strona główna</button>
                 </Link>
               </li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        ""
+              {MenuData.map((menu, index) => (
+                <li className="menuItem" onClick={closeMenu} key={index}>
+                  <Link
+                    to={menu.url}
+                    className={location.pathname === menu.url ? "active" : ""}
+                  >
+                    <button>{menu.title}</button>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </>
       )}
     </>
   );

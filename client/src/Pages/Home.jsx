@@ -36,19 +36,23 @@ const Home = () => {
             </div>
           </button>
         </Link>
-        <div className="address flex">
-          <a href="#location">
+        <address className="address flex">
+          <a href="#location" aria-label="Zobacz lokalizację firmy">
             <LocationIcon />
           </a>
           <p>ul. Rynek 11, 44-240 Żory</p>
-        </div>
+        </address>
       </header>
 
-      <div className="flex" id="aboutUs">
-        <div className="photos flex">
-          <img src="/images/home/about.jpg" loading="lazy" aria-hidden={true} />
-        </div>
-        <div className="header flexColumn">
+      <section className="flex" id="aboutUs">
+        <figure className="photos flex">
+          <img
+            src="/images/home/about.jpg"
+            loading="lazy"
+            alt="Zespół Kom-Part w pracy"
+          />
+        </figure>
+        <article className="header flexColumn">
           <h3> - Rok założenia MCMXCVII - </h3>
           <h2>Marka KOM-PART znana jest od roku 1997r.</h2>
           <h3>
@@ -68,13 +72,13 @@ const Home = () => {
               naszych klientów.
             </p>
           </div>
-          <div className="flexColumn" id="reviews">
+          <section className="flexColumn" id="reviews">
             <GoogleReviews />
-          </div>
-        </div>
-      </div>
+          </section>
+        </article>
+      </section>
 
-      <div className="flex" id="service">
+      <section className="flex" id="service">
         <div className="header">
           <div className="title">
             <h2>Skorzystaj z naszej oferty</h2>
@@ -87,7 +91,7 @@ const Home = () => {
             <button>Dowiedz się więcej...</button>
           </Link>
         </div>
-        <div className="listOfServices flexColumn">
+        <div className="listOfServices flexColumn" aria-label="Lista usług">
           <Link to="/uslugi">
             <div className="serviceContainer flex">
               <div className="gridCenter">
@@ -121,9 +125,9 @@ const Home = () => {
             </div>
           </Link>
         </div>
-      </div>
+      </section>
 
-      <div className="flex" id="location">
+      <section className="flex" id="location">
         <div className="title">
           <h2>Do zobaczenia wkrótce!</h2>
           <p>
@@ -136,7 +140,7 @@ const Home = () => {
           </p>
         </div>
         <GoogleMap />
-      </div>
+      </section>
 
       {!isMobile ? <LogoCarousel /> : ""}
     </div>

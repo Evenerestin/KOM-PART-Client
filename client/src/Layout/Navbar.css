@@ -90,15 +90,11 @@ li.menuItem .active button {
 /* ---------------------- hamburgerIcon ---------------------- */
 
 .hamburgerIcon {
-  width: 40px;
-  height: 30px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
+  width: clamp(28px, 8vw, 40px);
+  height: clamp(22px, 6vw, 30px);
+  position: relative;
+  z-index: 16;
   transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   cursor: pointer;
 }
@@ -106,19 +102,13 @@ li.menuItem .active button {
 .hamburgerIcon span {
   display: block;
   position: absolute;
-  height: 5px;
+  height: clamp(3px, 1vw, 5px);
   width: 100%;
   background: var(--accent-secondary);
   border-radius: 9px;
   opacity: 1;
   left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
 
@@ -163,38 +153,118 @@ li.menuItem .active button {
 
 /* ---------------------- navigationMobile ---------------------- */
 
+.mobileNavOverlay {
+  display: none;
+}
+.mobileNavOverlay.open {
+  display: block;
+  position: fixed;
+  z-index: 14;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  transition: opacity 0.4s ease;
+  opacity: 1;
+}
+
 .navigationMobile {
   position: fixed;
-  z-index: 5;
-  height: 100dvh;
-  background: rgba(0, 0, 0, 0.9);
-  width: 0;
+  z-index: 15;
+  top: 0;
   right: 0;
-  transition: width 1s ease;
+  height: 100vh;
+  width: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 30, 0.98) 0%,
+    rgba(30, 30, 45, 0.98) 100%
+  );
+  box-shadow: -4px 0 32px 0 rgba(0, 0, 0, 0.4);
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: width 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
-
 .navigationMobile.open {
-  width: 100vw;
+  width: 100%;
 }
-
 .navigationMobile ul {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(100%, -50%);
-  text-wrap: nowrap;
-  margin-top: 2rem;
-  transition: transform 1s ease;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(0.8rem, 3vh, 1.5rem);
+  opacity: 0;
+  transform: translateX(20px);
+  transition:
+    opacity 0.4s ease 0.1s,
+    transform 0.4s ease 0.1s;
+  margin: auto;
 }
 .navigationMobile.open ul {
-  margin-top: 2rem;
-  transform: translate(-50%, -50%);
+  opacity: 1;
+  transform: translateX(0);
+}
+.navigationMobile .menuItem {
+  width: 100%;
+}
+.navigationMobile .menuItem button {
+  color: #fff;
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  padding: clamp(0.6rem, 2vh, 0.8rem) clamp(0.8rem, 3vw, 1.2rem)
+    clamp(0.6rem, 2vh, 0.8rem) 1rem;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+.navigationMobile .menuItem button:hover,
+.navigationMobile .menuItem button:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+  transform: translateX(8px);
+}
+.navigationMobile .active button {
+  color: var(--accent-secondary);
+  border-left-color: var(--accent-secondary);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.navigationMobile .menuItem button {
-  color: white;
-  font-size: 2rem;
-  padding: 1rem 5rem;
+.closeMobileNav {
+  position: absolute;
+  top: clamp(1.5rem, 4vh, 2rem);
+  right: clamp(1rem, 3vw, 1.5rem);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  width: clamp(36px, 10vw, 44px);
+  height: clamp(36px, 10vw, 44px);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 17;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.closeMobileNav:hover,
+.closeMobileNav:focus {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--accent-secondary);
+  transform: rotate(90deg);
 }
 
 /* ---------------------- media phone ---------------------- */
@@ -204,69 +274,83 @@ li.menuItem .active button {
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
+    padding: 4px 8px;
   }
 
   .contactInfo div {
-    margin-right: 1rem;
-  }
-
-  .navBar a.logo svg {
-    height: 30px;
-    width: 130px;
-  }
-
-  .navigationMobile .menuItem button {
-    font-size: 1.5rem;
+    margin-right: clamp(0.5rem, 3vw, 1rem);
+    font-size: clamp(0.75rem, 3vw, 0.9rem);
   }
 
   .navBar {
-    justify-content: space-between;
-    padding: clamp(5px, 1vh, 2rem) 2rem;
-    background: white;
-    transition: padding 0.3s ease;
-    align-items: center;
+    padding: clamp(8px, 2vh, 1rem) clamp(1rem, 4vw, 2rem);
   }
 
   nav.scrolled .navBar {
-    padding: 0 2rem;
+    padding: clamp(4px, 1vh, 0.5rem) clamp(1rem, 4vw, 2rem);
   }
 
-  .navigationMobile {
-    justify-content: center;
-    transition: width 1s cubic-bezier(0.1, 0.1, 5, 0.1);
+  .navBar a.logo svg {
+    height: clamp(24px, 6vw, 32px);
+    width: clamp(100px, 30vw, 140px);
   }
 
-  .hamburgerIcon {
-    width: 30px;
-    height: 22px;
-  }
-
-  .hamburgerIcon span {
-    height: 3px;
-  }
-
-  .hamburgerIcon span:nth-child(1) {
-    top: 0px;
+  .navigationMobile.open {
+    width: 100vw;
+    max-width: 100vw;
   }
 
   .hamburgerIcon span:nth-child(2),
   .hamburgerIcon span:nth-child(3) {
-    top: 8px;
+    top: clamp(8px, 2.5vw, 12px);
   }
 
   .hamburgerIcon span:nth-child(4) {
-    top: 16px;
+    top: clamp(16px, 5vw, 24px);
+  }
+}
+
+/* ---------------------- media extra small phones ---------------------- */
+
+@media screen and (max-width: 360px) {
+  .contactInfo {
+    padding: 2px 4px;
   }
 
-  .navigationMobile.open {
-    width: 100%;
+  .contactInfo p {
+    font-size: 0.7rem;
   }
 
-  .navigationMobile ul li button,
-  .navigationMobile ul li button:hover,
-  .navigationMobile ul li button:focus,
-  .navigationMobile ul li .active button {
-    font-weight: 700;
+  .contactInfo #phoneIcon,
+  .contactInfo #mailIcon {
+    width: 12px;
+    height: 12px;
+    margin-right: 0.5rem;
+  }
+
+  .navBar {
+    padding: 6px clamp(0.8rem, 3vw, 1rem);
+  }
+
+  .navBar a.logo svg {
+    height: 22px;
+    width: 90px;
+  }
+
+  .navigationMobile ul {
+    padding: 3.5rem 1rem 1.5rem 1rem;
+    gap: 0.6rem;
+  }
+
+  .navigationMobile .menuItem button {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .closeMobileNav {
+    width: 32px;
+    height: 32px;
+    font-size: 1.6rem;
   }
 }
 

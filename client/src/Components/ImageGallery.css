@@ -60,12 +60,21 @@
   fill: white;
 }
 
-.modalImage img {
-  width: auto;
-  height: 90vh;
+.modalImage {
+  max-width: 90vw;
+  max-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.modalImage img {
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 /* ---------------------- media phone ---------------------- */
@@ -77,5 +86,26 @@
   .galleryContainer .singleImage img {
     height: auto;
     width: 70vw;
+  }
+
+  .modalBackdrop {
+    padding: 1rem;
+  }
+
+  .modalImage {
+    max-width: 85vw;
+    max-height: 80vh;
+  }
+
+  .modalImage img {
+    max-width: 100%;
+    max-height: 80vh;
+  }
+
+  .modalBackdrop .navigationArrow #leftArrow,
+  .modalBackdrop .navigationArrow #rightArrow {
+    width: 36px;
+    height: 36px;
+    padding: 0.7rem;
   }
 }

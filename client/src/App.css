@@ -11,6 +11,18 @@
   font-family: "Montserrat", sans-serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 h1 {
   font-family: "Genos", sans-serif;
   letter-spacing: 2px;
@@ -70,9 +82,9 @@ button {
 }
 
 @media screen and (max-width: 1023px) {
- p {
-  font-size: 1rem;
- }
+  p {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 2000px) {
@@ -82,23 +94,23 @@ button {
     font-size: 17px;
   }
 
-  p, li, button {
+  p,
+  li,
+  button {
     font-size: 1.2rem;
   }
-
 
   h1 {
     font-size: 5rem;
   }
-  
+
   h2 {
     font-size: 3rem;
   }
-  
+
   h3 {
     font-size: 1.6rem;
   }
-
 }
 
 /* ---------------------- root ---------------------- */
