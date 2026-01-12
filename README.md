@@ -4,17 +4,19 @@
 </h1>
 <h3>
   Business Website <br />
-  <a href="https://www.komputerowyserwis.com">komputerowyserwis.com</a> <br />
+  <a href="https://www.komputerowyserwis.com">KOM-PART</a> <br />
 </h3>
+
 
 <br />
 
 <h3>Technology Stack:</h3>
-<p>
-   Frontend Stack: React.js, Vite, Strapi Headless CMS <br />
-   Backend Stack: Digital Ocean Droplet, Nginx web server, GitHub web hook <br />
-   Vercel cloud deployment
-</p>
+<p>React, Vite, Strapi Headless CMS <br />Nginx, GitHub web hook <br /></p>
+
+<br />
+
+<h3>Deployment:</h3>
+<p>Vercel, Digital Ocean Droplet/></p>
 
 <br />
 
