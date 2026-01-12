@@ -16,7 +16,7 @@
 <br />
 
 <h3>Deployment:</h3>
-<p>Vercel, Digital Ocean Droplet/></p>
+<p>Vercel, Digital Ocean Droplet</p>
 
 <br />
 
