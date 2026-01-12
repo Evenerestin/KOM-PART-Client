@@ -47,7 +47,7 @@ const Home = () => {
       <section className="flex" id="aboutUs">
         <figure className="photos flex">
           <img
-            src="/images/home/about.jpg"
+            src="/Images/Home/about.jpg"
             loading="lazy"
             alt="Zespół Kom-Part w pracy"
           />

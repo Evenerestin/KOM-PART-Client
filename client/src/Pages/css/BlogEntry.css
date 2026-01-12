@@ -41,7 +41,7 @@
 
 .blogEntryPage .blogBanner {
   padding: 8rem 5rem 2rem;
-  background: url(/blogBanner.jpg) bottom/cover no-repeat;
+  background: url(/Images/Blog/banner.jpg) bottom/cover no-repeat;
   background-attachment: fixed;
   text-align: center;
   min-height: 30vh;

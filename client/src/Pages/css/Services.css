@@ -92,7 +92,7 @@ body {
 /* ---------------------- serviceHeader ---------------------- */
 
 .servicesHeader div:first-child {
-  background: url(/images/services/banner.jpg) bottom/cover no-repeat;
+  background: url(/Images/Services/banner.jpg) bottom/cover no-repeat;
   justify-content: center;
   align-items: center;
   height: 60vh;
@@ -151,7 +151,7 @@ body {
   background: rgb(82, 82, 82);
   justify-content: center;
   gap: 2rem;
-  background: url(/images/services/summary.jpg) center/cover no-repeat;
+  background: url(/Images/Services/summary.jpg) center/cover no-repeat;
 }
 
 .serviceSummary .row {
@@ -265,7 +265,7 @@ body {
 .closingSection {
   width: 100%;
   height: 20vh;
-  background: url(/images/services/banner.jpg) bottom/cover no-repeat;
+  background: url(/Images/Services/banner.jpg) bottom/cover no-repeat;
 }
 
 /* ---------------------- utilities ---------------------- */

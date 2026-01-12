@@ -164,7 +164,7 @@ const Services = () => {
         </div>
         <div className="imageContainer">
           <img
-            src="/images/services/servicing.jpg"
+            src="/Images/Services/servicing.jpg"
             aria-hidden="true"
             loading="lazy"
           />
@@ -173,7 +173,7 @@ const Services = () => {
       <div className="serviceSection flex" id="sales">
         <div className="imageContainer">
           <img
-            src="/images/services/sales.jpg"
+            src="/Images/Services/sales.jpg"
             aria-hidden="true"
             loading="lazy"
           />
@@ -233,7 +233,7 @@ const Services = () => {
         </div>
         <div className="imageContainer">
           <img
-            src="/images/services/data.jpg"
+            src="/Images/Services/data.jpg"
             aria-hidden="true"
             loading="lazy"
           />
@@ -242,7 +242,7 @@ const Services = () => {
       <div className="serviceSection flex" id="internet">
         <div className="imageContainer">
           <img
-            src="/images/services/internet.jpg"
+            src="/Images/Services/internet.jpg"
             aria-hidden="true"
             loading="lazy"
           />
@@ -269,7 +269,7 @@ const Services = () => {
               montażu i instalacji infrastruktury sieciowej
             </li>
             <li>
-              <a href="/public/regulamin.pdf" target="_blank">
+              <a href="/regulamin.pdf" target="_blank">
                 Regulamin świadczenia usług dostępu do internetu
               </a>
             </li>

@@ -14,7 +14,7 @@ html {
 
 header {
   height: 100vh;
-  background: url(/images/home/banner.jpg) center/cover no-repeat;
+  background: url(/Images/Home/banner.jpg) center/cover no-repeat;
   scroll-snap-align: start;
   width: auto;
   text-align: center;
@@ -232,7 +232,7 @@ header button:focus #phoneIcon {
 #service {
   padding: 0 5vw;
   justify-content: space-evenly;
-  background: url(/images/home/service.jpg) center/cover no-repeat;
+  background: url(/Images/Home/service.jpg) center/cover no-repeat;
   background-attachment: fixed;
   height: 60vh;
   width: 100%;
