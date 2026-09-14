@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
-import useFetch from "../Hooks/useFetch";
+import useBlogs from "../Hooks/useBlogs";
 import NotFound from "../Pages/NotFound.jsx";
 import config from "../config.js";
 import "./css/Blog.css";
 
 const Blog = () => {
-  let { loading, error, blogs } = useFetch();
+  let { loading, error, blogs } = useBlogs();
   const [delayedLoading, setLoadingDelay] = useState(true);
-  const reversedBlogs = blogs ? [...blogs].reverse() : [];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -40,7 +39,7 @@ const Blog = () => {
     return <NotFound />;
   }
 
-  if (!Array.isArray(reversedBlogs) || reversedBlogs.length === 0) {
+  if (!Array.isArray(blogs) || blogs.length === 0) {
     return (
       <div className="emptyBlogPage">
         <h3>:( przepraszamy </h3>
@@ -54,27 +53,25 @@ const Blog = () => {
 
   return (
     <div className="blogPage flexColumn">
-      {reversedBlogs.map(({ id, attributes }) => (
-        <Link
-          className="blogHeader flex"
-          key={id}
-          to={`/blog/${attributes.title}`}
-        >
+      {blogs.map(({ id, Slug, Title, Excerpt, Content, CoverImage, publishedAt }) => (
+        <Link className="blogHeader flex" key={id} to={`/blog/${Slug}`}>
           <div className="blogCover gridCenter">
-            <img
-              loading="lazy"
-              aria-hidden="true"
-              src={`${config.api}${attributes.cover.data.attributes.url}`}
-            />
+            {CoverImage && (
+              <img
+                loading="lazy"
+                aria-hidden="true"
+                src={`${config.api}${CoverImage.url}`}
+              />
+            )}
           </div>
           <div className="blogContent flexColumn">
-            <h2>{attributes.title}</h2>
+            <h2>{Title}</h2>
             <div>
-              <h3>{attributes.subtitle}</h3>
+              <h3>{Excerpt}</h3>
               <ReactMarkdown className="markdownContent">
-                {attributes.content}
+                {Content}
               </ReactMarkdown>
-              <p className="publicationDate">{attributes.publicationDate}</p>
+              <p className="publicationDate">{publishedAt}</p>
             </div>
           </div>
         </Link>

@@ -2,18 +2,16 @@ import ReactMarkdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
 import ErrorIcon from "../Assets/ErrorIcon";
 import config from "../config.js";
-import useFetch from "../Hooks/useFetch";
+import useBlogPost from "../Hooks/useBlogPost";
 import "./css/BlogEntry.css";
 
 const BlogEntry = () => {
-  let { loading, error, blogs } = useFetch();
-  const { title } = useParams();
+  const { slug } = useParams();
+  let { loading, error, blog: matchedBlog } = useBlogPost(slug);
   if (loading) return <p>Ładowanie...</p>;
   if (error) {
     return <p>Błąd podczas pobierania danych</p>;
   }
-  const matchedBlog = blogs.find((blog) => blog.attributes.title === title);
-  console.log(matchedBlog);
   if (!matchedBlog) {
     return (
       <div className="emptyBlogEntryPage flexColumn">
@@ -28,37 +26,27 @@ const BlogEntry = () => {
     );
   }
 
+  const { Title, Excerpt, Content, CoverImage, publishedAt } = matchedBlog;
+
   return (
     <div className="blogEntryPage">
       <div className="blogBanner flexColumn">
-        <h1>{matchedBlog.attributes.title}</h1>
-        <h3>{matchedBlog.attributes.subtitle}</h3>
+        <h1>{Title}</h1>
+        <h3>{Excerpt}</h3>
       </div>
       <div className="blogContent flex">
-        <div className="cover gridCenter">
-          <img
-            src={`${config.api}${matchedBlog.attributes.cover.data.attributes.url}`}
-            aria-hidden="true"
-            loading="lazy"
-          />
-        </div>
-        <div className="entryMarkdownContent">
-          <ReactMarkdown>{matchedBlog.attributes.content}</ReactMarkdown>
-          <p className="publicationDate">
-            {matchedBlog.attributes.publicationDate}
-          </p>
-          <div className="mediaFiles">
-            {matchedBlog.attributes.media.data &&
-              matchedBlog.attributes.media.data.map(({ id, attributes }) =>
-                attributes.ext !== ".jpg" &&
-                attributes.ext !== ".jpeg" &&
-                attributes.ext !== ".png" ? (
-                  <a key={id} href={attributes.name} download={attributes.name}>
-                    {attributes.name}
-                  </a>
-                ) : null
-              )}
+        {CoverImage && (
+          <div className="cover gridCenter">
+            <img
+              src={`${config.api}${CoverImage.url}`}
+              aria-hidden="true"
+              loading="lazy"
+            />
           </div>
+        )}
+        <div className="entryMarkdownContent">
+          <ReactMarkdown>{Content}</ReactMarkdown>
+          <p className="publicationDate">{publishedAt}</p>
         </div>
       </div>
     </div>
