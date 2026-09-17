@@ -1,111 +1,557 @@
 .galleryContainer {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  gap: 5rem;
-  align-items: center;
-  justify-content: center;
-  max-width: 70%;
+  position: relative;
+  max-width: 74rem;
   margin: 0 auto;
-  padding: 10rem 0;
+  padding: 0.5rem 5vw 5rem;
 }
 
-.galleryContainer .singleImage {
+.galleryContainer::before {
+  content: "";
+  position: absolute;
+  left: calc(5vw + 27px);
+  top: 0;
+  bottom: 40px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(120, 128, 241, 0),
+    rgba(120, 128, 241, 0.55) 4%,
+    rgba(120, 128, 241, 0.55) 96%,
+    rgba(120, 128, 241, 0)
+  );
+}
+
+.milestone {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  align-items: center;
+  margin-bottom: 2.25rem;
+  position: relative;
+}
+
+.milestone:last-child {
+  margin-bottom: 0;
+}
+
+.nodeDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  box-shadow:
+    0 0 0 5px #16181d,
+    0 0 18px 4px rgba(120, 128, 241, 0.6);
+  justify-self: center;
+  position: relative;
+  z-index: 1;
+}
+
+.galleryCard {
+  background: #1e2027;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 1rem;
+  padding: 1.375rem 1.5rem 1.625rem;
+  box-shadow: 0 1rem 2.25rem rgba(0, 0, 0, 0.4);
+  width: 100%;
+  min-width: 0;
+}
+
+.yearBadge {
+  font-family: "Genos", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--accent-primary);
+  margin: 0 0 1rem;
+}
+
+.itemsRow {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.375rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(120, 128, 241, 0.4) transparent;
+}
+
+.itemsRow::-webkit-scrollbar {
+  height: 6px;
+}
+
+.itemsRow::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.itemsRow::-webkit-scrollbar-thumb {
+  background: rgba(120, 128, 241, 0.4);
+  border-radius: 999px;
+}
+
+.itemsRow::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 128, 241, 0.6);
+}
+
+.subItem {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 190px;
+  flex-shrink: 0;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.subItem:hover,
+.subItem:focus-visible {
+  transform: translateY(-3px);
+}
+
+.subItem:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.thumb {
+  position: relative;
+  width: 190px;
+  aspect-ratio: 3/4;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  margin-bottom: 0.75rem;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbHint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 11, 15, 0);
+  opacity: 0;
+  transition: opacity 0.25s ease, background 0.25s ease;
+}
+
+.subItem:hover .thumbHint,
+.subItem:focus-visible .thumbHint {
+  opacity: 1;
+  background: rgba(10, 11, 15, 0.38);
+}
+
+.thumbHint svg {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  transform: scale(0.85);
+  transition: transform 0.25s ease;
+}
+
+.subItem:hover .thumbHint svg,
+.subItem:focus-visible .thumbHint svg {
+  transform: scale(1);
+}
+
+.caption {
+  font-size: 0.85rem;
+  color: #d6d6de;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* ---------------------- featured (single-item years) ---------------------- */
+
+.featureItem {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  text-align: left;
   cursor: pointer;
 }
 
-.galleryContainer .singleImage img {
-  height: 20rem;
-  width: auto;
+.featureThumb {
+  position: relative;
+  width: 220px;
+  aspect-ratio: 3/4;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-.galleryContainer .singleImage img:hover {
-  transform: scale(1.02);
+.featureItem:hover .featureThumb,
+.featureItem:focus-visible .featureThumb {
+  transform: translateY(-3px);
 }
+
+.featureItem:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.featureThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.featureThumbHint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 11, 15, 0);
+  opacity: 0;
+  transition: opacity 0.25s ease, background 0.25s ease;
+}
+
+.featureItem:hover .featureThumbHint,
+.featureItem:focus-visible .featureThumbHint {
+  opacity: 1;
+  background: rgba(10, 11, 15, 0.38);
+}
+
+.featureThumbHint svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+  transform: scale(0.85);
+  transition: transform 0.25s ease;
+}
+
+.featureItem:hover .featureThumbHint svg,
+.featureItem:focus-visible .featureThumbHint svg {
+  transform: scale(1);
+}
+
+.featureDivider {
+  align-self: stretch;
+  width: 2px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(120, 128, 241, 0.65),
+    transparent
+  );
+}
+
+.featureBody {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.featureKicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #9ca3f5;
+  margin: 0;
+}
+
+.featureCaption {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #e5e5eb;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ---------------------- modal / lightbox ---------------------- */
 
 .modalBackdrop {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.5);
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  background: rgba(10, 11, 15, 0.85);
+  padding: 2rem;
+  animation: modalFadeIn 0.2s ease;
 }
 
-.modalBackdrop .navigationArrow {
-  margin: auto auto;
-  cursor: pointer;
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.modalBackdrop .navigationArrow #leftArrow,
-.modalBackdrop .navigationArrow #rightArrow {
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
-  width: 45px;
-  height: 45px;
-  background: rgb(255, 255, 255, 0.7);
-  border: none;
-  padding: 1rem;
-  border-radius: 100%;
-  font-size: 2rem;
-  font-weight: 300;
-  fill: var(--font-dark);
-  transition: fill 0.2s ease;
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.modalBackdrop .navigationArrow:hover #leftArrow,
-.modalBackdrop .navigationArrow:hover #rightArrow {
-  fill: white;
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: modalScaleIn 0.25s ease;
 }
 
 .modalImage {
   max-width: 90vw;
-  max-height: 90vh;
+  max-height: 76vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .modalImage img {
   max-width: 100%;
-  max-height: 90vh;
+  max-height: 76vh;
   width: auto;
   height: auto;
   object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modalCaption {
+  margin-top: 1.25rem;
+  max-width: 40rem;
+  text-align: center;
+}
+
+.modalCaptionText {
+  color: #f1f1f4;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 0.4rem;
+}
+
+.modalCounter {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.modalClose,
+.navigationArrow {
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.modalClose:hover,
+.modalClose:focus-visible,
+.navigationArrow:hover,
+.navigationArrow:focus-visible {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.modalClose:focus-visible,
+.navigationArrow:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.modalClose {
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+}
+
+.modalClose svg {
+  width: 20px;
+  height: 20px;
+}
+
+.navigationArrow {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+}
+
+.navigationArrow:hover,
+.navigationArrow:focus-visible {
+  transform: translateY(-50%) scale(1.06);
+}
+
+.navigationArrow--prev {
+  left: 1.5rem;
+}
+
+.navigationArrow--next {
+  right: 1.5rem;
+}
+
+.navigationArrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------------------- media tablet ---------------------- */
+
+@media screen and (max-width: 1023px) {
+  .thumb,
+  .subItem {
+    width: 150px;
+  }
+  .galleryCard {
+    padding: 1.125rem 1.25rem 1.375rem;
+  }
+  .itemsRow {
+    gap: 1.125rem;
+  }
+  .featureThumb {
+    width: 170px;
+  }
+  .featureItem {
+    gap: 1.5rem;
+  }
+  .thumbHint svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* ---------------------- media phone ---------------------- */
 
 @media screen and (max-width: 767px) {
   .galleryContainer {
-    gap: 2rem;
+    padding: 0.5rem 1.25rem 3rem;
   }
-  .galleryContainer .singleImage img {
-    height: auto;
-    width: 70vw;
+  .galleryContainer::before {
+    left: calc(1.25rem + 15px);
+  }
+  .milestone {
+    grid-template-columns: 32px 1fr;
+    margin-bottom: 1.5rem;
+  }
+  .nodeDot {
+    width: 12px;
+    height: 12px;
+  }
+  .galleryCard {
+    padding: 1rem;
+  }
+  .itemsRow {
+    gap: 1rem;
+  }
+  .thumb,
+  .subItem {
+    width: 130px;
+  }
+
+  .featureItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .featureThumb {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .featureDivider {
+    display: none;
+  }
+
+  .featureBody {
+    padding-top: 0;
+  }
+
+  .featureCaption {
+    font-size: 0.95rem;
   }
 
   .modalBackdrop {
     padding: 1rem;
   }
 
+  .modalContent {
+    max-width: 100%;
+  }
+
   .modalImage {
-    max-width: 85vw;
-    max-height: 80vh;
+    max-width: 100%;
+    max-height: 62vh;
   }
 
   .modalImage img {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 62vh;
   }
 
-  .modalBackdrop .navigationArrow #leftArrow,
-  .modalBackdrop .navigationArrow #rightArrow {
-    width: 36px;
-    height: 36px;
-    padding: 0.7rem;
+  .modalCaptionText {
+    font-size: 0.82rem;
+  }
+
+  .modalClose {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 38px;
+    height: 38px;
+  }
+
+  .modalClose svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .navigationArrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navigationArrow--prev {
+    left: 0.5rem;
+  }
+
+  .navigationArrow--next {
+    right: 0.5rem;
+  }
+
+  .navigationArrow svg {
+    width: 17px;
+    height: 17px;
   }
 }

@@ -86,6 +86,12 @@ export async function listPosts() {
     }),
   ]);
 
+  // Strapi can stamp a draft row a moment after its published counterpart
+  // even when nothing was actually edited (the mirrored row is written in
+  // the same publish request); a few seconds of tolerance keeps that from
+  // being mistaken for a real unsaved edit.
+  const DRAFT_SYNC_TOLERANCE_MS = 5000;
+
   const byDocumentId = new Map();
   for (const post of published.data.data) {
     byDocumentId.set(post.documentId, { ...post, status: "published", hasDraft: false });
@@ -93,7 +99,16 @@ export async function listPosts() {
   for (const post of draft.data.data) {
     const existing = byDocumentId.get(post.documentId);
     if (existing) {
-      existing.hasDraft = true;
+      // A draft row exists alongside every published entry even when it was
+      // never edited after publishing, so a draft row existing isn't itself
+      // evidence of unsaved changes -- only a meaningfully newer draft is.
+      const draftAge = new Date(post.updatedAt) - new Date(existing.updatedAt);
+      existing.hasDraft = draftAge > DRAFT_SYNC_TOLERANCE_MS;
+      if (existing.hasDraft) {
+        // Reflect the draft's more recent edit time, not the last publish,
+        // so the "unsaved changes" badge and the displayed date agree.
+        existing.updatedAt = post.updatedAt;
+      }
     } else {
       byDocumentId.set(post.documentId, { ...post, status: "draft", hasDraft: false });
     }

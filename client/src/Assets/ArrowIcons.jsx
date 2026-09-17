@@ -1,18 +1,52 @@
 export const LeftArrow = () => {
   return (
     <svg
-      version="1.1"
       id="leftArrow"
       xmlns="http://www.w3.org/2000/svg"
-      x="0px"
-      y="0px"
-      viewBox="0 0 88.5 92.6"
-      xmlSpace="preserve"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
-      <path
-        d="M79.7,78.9L20.2,46.5L79.7,14c2.4-1.3,3.3-4.3,2-6.7c-1.3-2.4-4.3-3.3-6.7-2L7.7,42C5.9,43,5,45,5.2,46.9
-	c0.1,1.6,1,3.2,2.6,4L75,87.6c2.4,1.3,5.4,0.4,6.7-2C83,83.2,82.1,80.2,79.7,78.9z"
-      />
+      <polyline points="14.5 5.5 8 12 14.5 18.5" />
+    </svg>
+  );
+};
+
+export const ZoomIcon = () => {
+  return (
+    <svg
+      id="zoomIcon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="11" cy="11" r="7" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+};
+
+export const CloseIcon = () => {
+  return (
+    <svg
+      id="closeIcon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="6" y1="6" x2="18" y2="18" />
+      <line x1="18" y1="6" x2="6" y2="18" />
     </svg>
   );
 };
@@ -20,18 +54,16 @@ export const LeftArrow = () => {
 export const RightArrow = () => {
   return (
     <svg
-      version="1.1"
       id="rightArrow"
       xmlns="http://www.w3.org/2000/svg"
-      x="0px"
-      y="0px"
-      viewBox="0 0 88.5 92.6"
-      xmlSpace="preserve"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
-      <path
-        d="M7.7,78.9l59.5-32.4L7.7,14c-2.4-1.3-3.3-4.3-2-6.7c1.3-2.4,4.3-3.3,6.7-2L79.7,42c1.8,1,2.8,2.9,2.5,4.9
-	c-0.1,1.6-1,3.2-2.6,4L12.5,87.6c-2.4,1.3-5.4,0.4-6.7-2C4.4,83.2,5.3,80.2,7.7,78.9z"
-      />
+      <polyline points="9.5 5.5 16 12 9.5 18.5" />
     </svg>
   );
 };

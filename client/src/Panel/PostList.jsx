@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PanelLayout from "./PanelLayout.jsx";
-import { usePanelAuth } from "./PanelAuthContext.jsx";
+import { usePanelAuth } from "./usePanelAuth.js";
 import { deletePost, listPosts } from "./panelApi.js";
+import { formatDate } from "../Utils/formatDate";
 import "./Panel.css";
-
-const formatDate = (iso) =>
-  new Date(iso).toLocaleDateString("pl-PL", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
 
 const PostList = () => {
   const { user } = usePanelAuth();

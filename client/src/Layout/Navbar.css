@@ -176,7 +176,7 @@ li.menuItem .active button {
   top: 0;
   right: 0;
   height: 100vh;
-  width: 0;
+  width: min(82%, 320px);
   background: linear-gradient(
     135deg,
     rgba(20, 20, 30, 0.98) 0%,
@@ -185,16 +185,18 @@ li.menuItem .active button {
   box-shadow: -4px 0 32px 0 rgba(0, 0, 0, 0.4);
   overflow-x: hidden;
   overflow-y: auto;
-  transition: width 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: stretch;
 }
 .navigationMobile.open {
-  width: 100%;
+  transform: translateX(0);
 }
 .navigationMobile ul {
-  width: 70%;
+  width: 100%;
+  padding: 0 1.75rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -204,7 +206,7 @@ li.menuItem .active button {
   transition:
     opacity 0.4s ease 0.1s,
     transform 0.4s ease 0.1s;
-  margin: auto;
+  margin: auto 0;
 }
 .navigationMobile.open ul {
   opacity: 1;
@@ -295,11 +297,6 @@ li.menuItem .active button {
     width: clamp(100px, 30vw, 140px);
   }
 
-  .navigationMobile.open {
-    width: 100vw;
-    max-width: 100vw;
-  }
-
   .hamburgerIcon span:nth-child(2),
   .hamburgerIcon span:nth-child(3) {
     top: clamp(8px, 2.5vw, 12px);
@@ -338,7 +335,7 @@ li.menuItem .active button {
   }
 
   .navigationMobile ul {
-    padding: 3.5rem 1rem 1.5rem 1rem;
+    padding: 0 1.25rem;
     gap: 0.6rem;
   }
 

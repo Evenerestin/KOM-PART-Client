@@ -5,7 +5,6 @@ html {
 
 #aboutUs,
 #reviews,
-#service,
 #location {
   position: relative;
 }
@@ -151,215 +150,639 @@ header button:focus #phoneIcon {
 /* ---------------------- aboutUs ---------------------- */
 
 #aboutUs {
-  height: 130vh;
   align-items: center;
-  justify-content: flex-end;
-}
-
-#aboutUs .photos {
-  height: 60%;
-}
-
-#aboutUs .photos img {
-  width: auto;
-  height: 100%;
-  max-height: 50rem;
-  margin: auto 0;
-  margin-right: 2rem;
-}
-
-#aboutUs .header {
-  align-items: left;
-  padding: 0 clamp(2rem, 5%, 25rem);
-  min-width: 65vw;
   justify-content: center;
-  text-align: center;
+  gap: 4rem;
+  padding: 6rem 5vw;
+  background: var(--light);
 }
 
-#aboutUs .header h2 {
-  padding-bottom: 1rem;
-  color: var(--accent-secondary);
-  font-weight: 900;
-  letter-spacing: 2px;
+.aboutUsVisual {
+  position: relative;
+  flex: 1;
 }
 
-#aboutUs .header h3 {
-  color: rgb(209, 209, 209);
+.aboutUsImage {
+  width: 100%;
+  aspect-ratio: 1 / 0.78;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
-#aboutUs .header h3:nth-of-type(2) {
-  color: var(--font-darker);
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
+.aboutUsImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-#aboutUs .subHeader {
-  padding: 0 5rem;
-  margin-bottom: 8%;
+.aboutUsText {
+  max-width: 28rem;
+  margin: 0 5rem;
 }
 
-#aboutUs .subHeader p {
-  text-align: left;
+.aboutUsText h2 {
+  max-width: 24rem;
+  margin-bottom: 1.2rem;
+}
+
+.aboutUsText p {
   color: var(--font-dark);
-  letter-spacing: 1px;
-  line-height: 1.3rem;
-}
-
-#aboutUs .subHeader p {
+  line-height: 1.65rem;
   margin-bottom: 1rem;
-}
-
-#aboutUs .subHeader h3 {
-  color: var(--font-darker);
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-  text-align: left;
-  font-weight: 700;
-  margin-bottom: 3rem;
 }
 
 /* ---------------------- review ---------------------- */
 
 #reviews {
-  color: var(--font-dark);
-  text-align: left;
-}
-
-/* ---------------------- services ---------------------- */
-
-#service {
-  padding: 0 5vw;
-  justify-content: space-evenly;
-  background: url(/images/home/service.jpg) center/cover no-repeat;
-  background-attachment: fixed;
-  height: 60vh;
-  width: 100%;
+  background: var(--font-light);
+  padding: 3.5rem 5vw 4rem;
   align-items: center;
+  text-align: center;
 }
 
-#service .header {
-  width: 40%;
+#reviews .eyebrow {
+  margin-bottom: 1rem;
 }
 
-#service .title h2 {
-  font-size: 2rem;
-  padding-bottom: 1rem;
-  color: var(--font-light);
+#reviews h2 {
+  margin-bottom: 2rem;
+}
+
+/* ---------------------- offer hero ---------------------- */
+
+#offerHero {
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  padding: 6rem 5vw 3rem;
+  background: var(--light);
+}
+
+.eyebrow {
+  color: var(--accent-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 2px;
-}
-
-#service .title p {
-  color: var(--font-light);
-}
-
-#service .header button {
-  border: none;
-  margin-top: clamp(2rem, 10vw, 5rem);
-  background: white;
-  white-space: nowrap;
-  color: black;
-  padding: 0.8rem 4rem;
-  cursor: pointer;
-  border-radius: 0.3rem;
-  transition: all 1s ease;
-}
-
-#service .header button:hover,
-#service .header button:focus {
-  transform: translateX(2rem);
-  color: var(--accent-primary);
-}
-
-#service .listOfServices {
-  width: fit-content;
-  height: 100%;
-  background: hsla(0, 0%, 0%, 0.3);
-  backdrop-filter: blur(1rem);
-  justify-content: space-evenly;
-  align-items: flex-start;
-  padding: 2rem 3rem;
-}
-
-#service a {
-  text-decoration: none;
-}
-
-#service .serviceContainer {
-  align-items: center;
-}
-
-#service .serviceContainer h3 {
   text-transform: uppercase;
-  font-size: 0.9rem;
-  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.offerHeroContent {
+  max-width: 40rem;
+}
+
+.offerHeroContent h2 {
+  font-size: 3.2rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+  color: var(--font-darker);
+  margin-bottom: 1.5rem;
+}
+
+.offerHeroContent .lead {
+  color: var(--light-secondary);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.offerHeroActions {
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.offerHeroActions button {
+  text-transform: uppercase;
+  font-size: 0.85rem;
   letter-spacing: 1px;
-  color: rgb(209, 209, 209);
-  margin: 0 2rem;
-  transition: color 0.5s ease;
+  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+  transition: transform 0.3s ease;
 }
 
-#service .serviceContainer:hover h3,
-#service .serviceContainer:focus h3 {
+.offerHeroActions button:hover,
+.offerHeroActions button:focus {
+  transform: translateY(-2px);
+}
+
+.offerHeroActions .primaryBtn {
+  background: var(--accent-secondary);
+  color: var(--font-light);
+  border: none;
+}
+
+.offerHeroActions .secondaryBtn {
+  background: var(--font-light);
+  color: var(--font-darker);
+  border: 2px solid var(--font-darker);
+}
+
+.offerHeroChecklist {
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.offerHeroChecklist li {
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.offerHeroChecklist li span {
+  font-size: 0.85rem;
+  color: var(--font-dark);
+}
+
+.checkIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-secondary);
+}
+
+.offerHeroVisual {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.circuitCard {
+  width: 28rem;
+  max-width: 90vw;
+  aspect-ratio: 1 / 0.85;
+  background: var(--dark);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.circuitCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.offerHeroBadge {
+  position: absolute;
+  left: -1.5rem;
+  bottom: -1.5rem;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--font-light);
+  border-radius: 0.6rem;
+  padding: 1rem 1.3rem;
+  box-shadow: 0 10px 30px hsl(0 0% 0% / 0.15);
+}
+
+#shieldCheckIcon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: var(--accent-secondary);
+}
+
+.offerHeroBadge strong {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  color: var(--font-darker);
+}
+
+.offerHeroBadge span {
+  font-size: 0.75rem;
+  color: var(--font-dark);
+}
+
+/* ---------------------- offer cards ---------------------- */
+
+#offerCards {
+  padding: 4rem 5vw 5rem;
+  background: var(--light);
+  gap: 3rem;
+}
+
+.offerCardsHeader {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.offerCardsHeader h2 {
+  font-size: 2rem;
+  letter-spacing: 0;
+  color: var(--font-darker);
+}
+
+.offerCardsLink {
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--font-darker);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--font-darker);
+}
+
+.arrowRightIcon {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.offerCardsLink:hover .arrowRightIcon,
+.offerFeatureBtn:hover .arrowRightIcon,
+.offerSideCard a:hover .arrowRightIcon {
+  transform: translateX(4px);
+}
+
+.offerGrid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 1.75rem;
+}
+
+.offerFeatureCard {
+  position: relative;
+  overflow: hidden;
+  min-height: 32rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 50px hsl(230 30% 6% / 0.15);
+}
+
+.offerFeatureCard img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offerFeatureOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    hsl(230 34% 6% / 0.92) 10%,
+    hsl(230 34% 6% / 0.55) 45%,
+    hsl(230 34% 6% / 0.05) 75%
+  );
+}
+
+.offerFeatureBadge {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 0.75rem;
+  background: hsl(0 0% 100% / 0.14);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offerFeatureBadge svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--font-light);
+}
+
+.offerFeatureBody {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.25rem;
+}
+
+.offerFeatureTag {
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
   color: var(--accent-primary);
+  margin-bottom: 0.6rem;
 }
 
-#service .serviceContainer:hover div,
-#service .serviceContainer:focus div {
-  transform: translateY(-5px);
+.offerFeatureBody h3 {
+  font-size: 1.6rem;
+  letter-spacing: 0;
+  color: var(--font-light);
+  margin-bottom: 0.7rem;
+  max-width: 26rem;
 }
 
-#service .serviceContainer div {
-  height: 50px;
-  width: 50px;
-  transition: transform 0.5s ease;
+.offerFeatureBody p {
+  font-size: 0.9rem;
+  color: hsl(0 0% 100% / 0.78);
+  line-height: 1.5rem;
+  max-width: 26rem;
+  margin-bottom: 1.5rem;
 }
 
-#serviceOutlineIcon,
-#shopOutlineIcon,
-#dataRecoveryOutlineIcon,
-#internetOutlineIcon {
-  width: 45px;
-  height: 45px;
+.offerFeatureBtn {
+  align-items: center;
+  gap: 0.6rem;
+  align-self: flex-start;
+  background: var(--font-light);
+  color: var(--font-darker);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 0.75rem 1.4rem;
+  border-radius: 0.6rem;
+}
+
+.offerSideCards {
+  gap: 1.75rem;
+}
+
+.offerSideCard {
+  background: var(--font-light);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  flex: 1;
+  box-shadow: 0 10px 30px hsl(230 30% 6% / 0.06);
+}
+
+.offerSideIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: 0.75rem;
+  background: hsl(237 88% 93%);
+  margin-bottom: 1.25rem;
+}
+
+.offerSideIcon svg {
+  width: 24px;
+  height: 24px;
   fill: var(--accent-primary);
 }
 
-#dataRecoveryOutlineIcon {
-  width: 40px;
-  height: 40px;
+.offerSideTag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--light-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.offerSideCard h3 {
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  margin-bottom: 0.6rem;
+}
+
+.offerSideCard p {
+  font-size: 0.875rem;
+  color: var(--font-dark);
+  line-height: 1.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.offerSideCard a {
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--font-darker);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.offerInternetCard {
+  position: relative;
+  overflow: hidden;
+  min-height: 11rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 50px hsl(230 30% 6% / 0.15);
+  display: flex;
+  align-items: center;
+  margin-top: -1.25rem;
+}
+
+.offerInternetPhoto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(70%) brightness(0.9);
+}
+
+.offerInternetTint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    hsl(247 68% 53% / 0.9) 5%,
+    hsl(237 88% 73% / 0.68) 55%,
+    hsl(237 88% 73% / 0.35) 100%
+  );
+  mix-blend-mode: multiply;
+}
+
+.offerInternetShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    hsl(230 34% 6% / 0.55) 10%,
+    hsl(230 34% 6% / 0.15) 55%,
+    transparent 85%
+  );
+}
+
+.offerInternetContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 2.25rem 2.5rem;
+  flex-wrap: wrap;
+}
+
+.offerInternetContent .offerFeatureBadge {
+  position: static;
+  flex-shrink: 0;
+}
+
+.offerInternetBody {
+  flex: 1;
+  min-width: 240px;
+}
+
+.offerInternetContent .offerFeatureBtn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.offerInternetTag {
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--font-light);
+  margin-bottom: 0.4rem;
+}
+
+.offerInternetBody h3 {
+  font-size: 1.4rem;
+  letter-spacing: 0;
+  color: var(--font-light);
+  margin-bottom: 0.4rem;
+}
+
+.offerInternetBody p {
+  font-size: 0.875rem;
+  color: hsl(0 0% 100% / 0.85);
+  line-height: 1.4rem;
+  max-width: 34rem;
 }
 
 /* ---------------------- location ---------------------- */
 
 #location {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 1.75rem;
+  margin: 4rem 5vw 2rem;
+  background: var(--font-light);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px hsl(230 30% 6% / 0.06);
+}
+
+.locationInfo {
+  padding: 3rem 2.5rem;
   justify-content: center;
-  align-items: flex-start;
-  padding: 8rem 5rem 6rem;
 }
 
-#location .map iframe {
-  border: none;
-  border-radius: 10px;
+.locationInfo h2 {
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.2rem;
 }
 
-#location .title {
-  width: 40vw;
-  text-align: left;
-  margin-right: 1rem;
-}
-
-#location .title h2 {
-  font-size: 4rem;
-  margin: 1rem 0 3rem;
-  color: var(--accent-primary);
-}
-
-#location .title p {
+.locationInfo h2 + p {
   color: var(--font-dark);
-  font-size: 0.8rem;
+  line-height: 1.5rem;
+  max-width: 26rem;
+  margin-bottom: 1.5rem;
+}
+
+.locationRow {
+  gap: 0.8rem;
+  align-items: flex-start;
   margin-bottom: 1rem;
-  width: 60%;
+}
+
+.locationRow svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  fill: var(--accent-primary);
+  stroke: var(--accent-primary);
+}
+
+.locationRow p {
+  color: var(--font-dark);
+  line-height: 1.4rem;
+}
+
+.locationHours {
+  margin-bottom: 0.75rem;
+}
+
+.locationHours p {
+  font-size: 0.85rem;
+  line-height: 1.5rem;
+  margin-bottom: 0;
+}
+
+.locationBtn {
+  align-items: center;
+  gap: 0.6rem;
+  align-self: flex-start;
+  background: var(--font-darker);
+  color: var(--font-light);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.6rem;
+  width: fit-content;
+  margin-top: 0.75rem;
+}
+
+.locationMap {
+  position: relative;
+  min-height: 22rem;
+}
+
+.locationMap .map,
+.locationMap .map iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+}
+
+/* ---------------------- cta banner ---------------------- */
+
+#ctaBanner {
+  background: var(--accent-primary);
+  margin: 0 5vw 5rem;
+  padding: 2.75rem 3rem;
+  border-radius: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+#ctaBanner .title {
+  text-align: left;
+}
+
+#ctaBanner .title h2 {
+  color: var(--font-light);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+#ctaBanner .title p {
+  color: var(--font-light);
+  opacity: 0.85;
+}
+
+#ctaBanner .title a {
+  color: var(--font-light);
+  font-weight: 700;
+}
+
+#ctaBanner button {
+  background: var(--font-light);
+  color: var(--font-darker);
+  border: none;
+  white-space: nowrap;
+  padding: 1rem 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 0.3rem;
+  transition: transform 0.3s ease;
+}
+
+#ctaBanner button:hover,
+#ctaBanner button:focus {
+  transform: scale(1.05);
 }
 
 /* ---------------------- media phone ---------------------- */
@@ -384,93 +807,93 @@ header button:focus #phoneIcon {
   }
   #aboutUs {
     flex-direction: column;
-    height: fit-content;
-    margin: 5rem 0;
-  }
-  #aboutUs .photos {
-    display: none;
-  }
-  #aboutUs .subHeader {
-    padding: 0 0 2rem;
-  }
-  #service {
-    padding: 0;
-    height: auto;
-    position: relative;
-    justify-content: center;
-    background-attachment: unset;
-  }
-  #service .header {
-    width: 60vw;
-    padding: 3rem 2rem;
-  }
-  #service .header h2 { 
-    font-size: 1.5rem;
-  }
-  #service .listOfServices {
-    flex-direction: column;
-    height: auto;
-    align-items: center;
-    gap: 1rem;
-    padding: 2rem 0.5rem;
-    backdrop-filter: none;
-    
-  }
-  #service .serviceContainer {
-    width: min-content;
-    flex-direction: column;
-    align-items: center;
+    padding: 3rem 1.5rem;
+    gap: 3rem;
     text-align: center;
-    padding: 0.5rem 0;
   }
-  #service .serviceContainer h3 {
-    margin: 0;
-    white-space: wrap;
-    color: var(--accent-primary);
-  }
-  #service .header button {
-    border: none;
-    margin-top: clamp(2rem, 10vw, 5rem);
-    background: white;
-    white-space: wrap;
-    color: black;
-    padding: 0.8rem 1rem;
-    cursor: pointer;
-    border-radius: 0.3rem;
-    transition: all 1s ease;
-    font-size: 0.8rem;
-  }
-  #serviceOutlineIcon,
-  #shopOutlineIcon,
-  #dataRecoveryOutlineIcon,
-  #internetOutlineIcon {
-    width: 35px;
-    height: 35px;
-    fill: var(--accent-primary);
-  }
-  #dataRecoveryOutlineIcon {
-    width: 30px;
-    height: 30px;
-  }
-  #location {
-    flex-direction: column;
-    padding: 0 1rem;
-    margin-bottom: 2rem;
-    align-items: center;
-  }
-  #location .title {
-    width: 80%;
-    margin-right: 0;
-    margin-bottom: 2rem;
-  }
-  #location .title p {
+  .aboutUsVisual {
     width: 100%;
   }
-  #location .title h2 {
+  .aboutUsText {
+    max-width: none;
+  }
+  .aboutUsText h2 {
+    max-width: none;
+  }
+  #location {
+    grid-template-columns: 1fr;
+    margin: 0 1.5rem 3rem;
+  }
+  .locationInfo {
+    padding: 2rem 1.5rem;
+  }
+  .locationMap {
+    min-height: 16rem;
+  }
+  #ctaBanner {
+    flex-direction: column;
+    text-align: center;
+    margin: 0 1.5rem 3rem;
+    padding: 2.5rem 1.5rem;
+  }
+  #ctaBanner .title {
+    text-align: center;
+  }
+  #offerHero {
+    flex-direction: column;
+    padding: 3rem 1.5rem 1.5rem;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .offerHeroContent h2 {
     font-size: 2rem;
   }
-  #location .map iframe {
-    width: 90vw;
+  .offerHeroActions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .offerHeroChecklist {
+    justify-content: center;
+  }
+  .circuitCard {
+    width: 100%;
+  }
+  .offerHeroBadge {
+    left: 1rem;
+    bottom: -1rem;
+    padding: 0.8rem 1rem;
+  }
+  #offerCards {
+    padding: 1.75rem 1.5rem 3rem;
+  }
+  #reviews {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+  .offerCardsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .offerGrid {
+    grid-template-columns: 1fr;
+  }
+  .offerFeatureCard {
+    min-height: 22rem;
+  }
+  .offerFeatureBody {
+    padding: 1.75rem;
+  }
+  .offerFeatureBody h3 {
+    font-size: 1.35rem;
+  }
+  .offerInternetContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.75rem;
+  }
+  .offerInternetBody {
+    min-width: 0;
   }
 }
 
@@ -485,57 +908,51 @@ header button:focus #phoneIcon {
   }
   #aboutUs {
     flex-direction: column;
-    height: fit-content;
-    margin: 5rem 0;
-  }
-  #aboutUs .photos {
-    display: none;
-  }
-  #aboutUs .subHeader {
-    padding-bottom: 2rem;
-  }
-  #service {
-    flex-direction: column;
-    height: auto;
-    padding: 0;
-  }
-  #service .header {
-    width: 80%;
-    padding: 5rem 0;
-  }
-  #service .listOfServices {
-    flex-direction: row;
-    height: auto;
-    padding: 3rem 2rem;
-    width: 100%;
-  }
-  #service .serviceContainer {
-    flex-direction: column;
+    padding: 4rem 2rem;
     text-align: center;
-    width: min-content;
   }
-  #service .serviceContainer h3 {
-    margin: 0;
-    white-space: wrap;
-    margin-top: 1rem;
+  .aboutUsText {
+    max-width: none;
+  }
+  .aboutUsText h2 {
+    max-width: none;
   }
   #location {
+    grid-template-columns: 1fr;
+    margin: 0 2rem 4rem;
+  }
+  .locationMap {
+    min-height: 18rem;
+  }
+  #offerHero {
     flex-direction: column;
-    padding: 0 1rem;
-    align-items: center;
-    margin-bottom: 2rem;
+    padding: 4rem 2rem 2rem;
+    text-align: center;
   }
-  #location .title {
-    width: 80%;
-    margin-right: 0;
-    margin-bottom: 2rem;
-    padding: 0 2rem;
+  .offerHeroContent h2 {
+    font-size: 2.4rem;
   }
-  #location .title p {
-    width: 100%;
+  .offerHeroActions,
+  .offerHeroChecklist {
+    justify-content: center;
   }
-  #location .map iframe {
-    width: 90vw;
+  .circuitCard {
+    width: 26rem;
+  }
+  .offerHeroBadge {
+    left: 1rem;
+  }
+  #offerCards {
+    padding: 2.5rem 2rem 4rem;
+  }
+  #reviews {
+    padding: 3rem 2rem 3.5rem;
+  }
+  .offerGrid {
+    grid-template-columns: 1fr;
+  }
+  .offerFeatureCard {
+    min-height: 26rem;
   }
 }
 

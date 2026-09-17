@@ -1,0 +1,81 @@
+.documentGalleryPage {
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(120, 128, 241, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(circle at 90% 33%, rgba(219, 17, 17, 0.1), transparent 40px),
+    radial-gradient(
+      circle at 97% 45%,
+      rgba(219, 17, 17, 0.4),
+      transparent 110px
+    ),
+    radial-gradient(circle at 91% 78%, rgba(219, 17, 17, 0.2), transparent 65px),
+    #16181d;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.documentGalleryHeader {
+  position: relative;
+  padding: 11.5rem 5vw 3.5rem;
+  max-width: 46rem;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.documentGalleryHeader > * {
+  position: relative;
+  z-index: 1;
+}
+
+.documentGalleryHeader .headerMotif {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.documentGalleryHeader .headerMotif svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  fill: var(--accent-secondary);
+}
+
+.documentGalleryHeader .eyebrow {
+  color: #9ca3f5;
+}
+
+.documentGalleryHeader h1 {
+  color: var(--font-light);
+  font-size: 3.25rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.documentGalleryHeader .lead {
+  color: #c7c7cc;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0.4rem;
+}
+
+.documentGalleryHeader .meta {
+  color: #7c7d85;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 767px) {
+  .documentGalleryHeader {
+    padding: 11rem 1.25rem 2.5rem;
+  }
+  .documentGalleryHeader h1 {
+    font-size: 2.5rem;
+  }
+}

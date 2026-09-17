@@ -1,8 +1,3 @@
-body {
-  scroll-snap-type: y proximity;
-  background: var(--light);
-}
-
 .servicePage {
   position: relative;
 }
@@ -89,183 +84,300 @@ body {
   fill: var(--font-light);
 }
 
-/* ---------------------- serviceHeader ---------------------- */
+/* ---------------------- servicesHero ---------------------- */
 
-.servicesHeader div:first-child {
-  background: url(/images/services/banner.jpg) bottom/cover no-repeat;
-  justify-content: center;
+.servicesHero {
+  justify-content: space-between;
   align-items: center;
-  height: 60vh;
+  gap: 4rem;
+  padding: 11rem 5vw 4rem;
+  background: var(--light);
+}
+
+.heroContent {
+  max-width: 36rem;
+}
+
+.heroContent h1 {
+  margin: 0.75rem 0 1.5rem;
+  line-height: 1.05;
+}
+
+.heroContent h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+  font-size: 1.25rem;
+  color: var(--font-dark);
+  max-width: 30rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.heroContent p {
+  color: var(--font-dark);
+  line-height: 1.75;
+  max-width: 32rem;
+  margin-bottom: 1rem;
+}
+
+.heroContent .btnPrimary {
+  align-self: flex-start;
+  align-items: center;
+  margin-top: 1rem;
+  background: var(--accent-secondary);
+  color: var(--font-light);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+  transition: transform 0.3s ease;
+}
+
+.heroContent .btnPrimary:hover,
+.heroContent .btnPrimary:focus {
+  transform: translateY(-2px);
+}
+
+.heroImage {
+  flex-shrink: 0;
+  width: 36vw;
+  max-width: 30rem;
+  aspect-ratio: 4/5;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 3rem rgba(11, 14, 22, 0.15);
+}
+
+.heroImage img {
   width: 100%;
-  padding-top: 5rem;
-  transition: height 1s ease;
-}
-
-.servicesHeader .banner.scrolled {
-  height: 30vh;
-}
-
-.servicesHeader .banner.scrolled h1,
-.servicesHeader .banner.scrolled h2 {
-  opacity: 0;
-}
-
-.servicesHeader .banner h1,
-.servicesHeader .banner h2 {
-  color: white;
-  transition: opacity 0.5s ease-in;
-  text-align: center;
-}
-
-.servicesHeader .banner h2 {
-  width: 60%;
-  margin-top: 2rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  font-size: 1.5rem;
-}
-
-.servicesHeader .content {
-  height: 40vh;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  padding: 0 10%;
-  gap: clamp(0, 10vh, 2rem);
-}
-
-.servicesHeader .content p:first-of-type {
-  margin-bottom: 2rem;
-}
-
-.servicesHeader .content {
-  justify-content: center;
-  height: 40vh;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ---------------------- serviceSummary ---------------------- */
 
 .serviceSummary {
-  height: fit-content;
-  padding: 2rem 0;
-  background: rgb(82, 82, 82);
-  justify-content: center;
-  gap: 2rem;
-  background: url(/images/services/summary.jpg) center/cover no-repeat;
+  padding: 5rem 5vw;
+  background: var(--light);
+  gap: 3rem;
 }
 
-.serviceSummary .row {
-  justify-content: center;
-  gap: 5rem;
-}
-
-.serviceSummary .container {
-  width: 40vw;
-  padding: clamp(1rem, 10vh, 4rem) 5vw;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(0.3rem);
-  border-radius: 0.2rem;
-  transition: background 1s ease-out;
-}
-
-.serviceSummary .container:hover {
-  background: white;
-}
-
-.serviceSummary .container .title {
+.summaryHead {
   align-items: center;
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
-.serviceSummary .container .title h3 {
-  color: var(--accent-primary);
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-left: 2rem;
+.summaryHead h2 {
+  margin-top: 0.5rem;
 }
 
-.serviceSummary .container p {
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.summaryCard {
+  background: white;
+  border-radius: 1rem;
+  padding: 2.25rem 1.75rem;
+  border: 1px solid rgba(11, 14, 22, 0.05);
+  box-shadow: 0 0.5rem 1.5rem rgba(11, 14, 22, 0.05);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.summaryCard:hover {
+  box-shadow: 0 1rem 2rem rgba(11, 14, 22, 0.08);
+  transform: translateY(-4px);
+}
+
+.summaryIcon {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background: rgba(120, 128, 241, 0.12);
+  margin-bottom: 1.25rem;
+}
+
+.summaryIcon svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--accent-primary);
+}
+
+.summaryCard h3 {
+  color: var(--font-darker);
+  font-weight: 500;
+  letter-spacing: 0;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.summaryCard p {
   color: var(--font-dark);
-  padding: 2rem 0 1rem;
+  line-height: 1.6;
 }
 
 /* ---------------------- serviceSection ---------------------- */
 
 .serviceSection {
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  margin: 2rem 0;
-  padding: 0 5vw 0 calc(5vw + 2rem);
-  height: 100vh;
-  min-height: fit-content;
+  gap: 4rem;
+  padding: 5rem 5vw 5rem calc(5vw + 2rem);
   width: 100%;
 }
 
-.serviceSection h2 {
-  font-size: 2rem;
-  letter-spacing: 2px;
+#servicing,
+#data {
+  background: #fff;
+}
+
+#sales,
+#internet {
+  background: var(--light);
 }
 
 .serviceSection h2 {
-  margin: 0 0 2rem;
+  margin: 0.5rem 0 2rem;
   color: var(--font-darker);
 }
-.serviceSection p {
-  color: var(--font-dark);
-}
-
-.serviceSection ol {
-  margin-left: 2rem;
-}
-
-.serviceSection ol li {
-  color: var(--font-dark);
-  margin: 1rem 0;
-}
-
-.serviceSection img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ---------------------- serviceSections ---------------------- */
 
 .serviceSection .header {
-  width: 40vw;
-  padding-left: 2rem;
-}
-
-.serviceSection#sales,
-.serviceSection#data {
-  margin: clamp(2rem, 15vh, 10rem) 0;
+  max-width: 34rem;
 }
 
 .serviceSection .imageContainer {
-  width: 30vw;
+  flex: 1 1 32vw;
+  max-width: 34rem;
+  aspect-ratio: 1/1;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 3rem rgba(11, 14, 22, 0.12);
 }
 
-#internet .header li:last-of-type {
-  cursor: pointer;
+.serviceSection .imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.serviceSection ol {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.serviceSection ol li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0;
+}
+
+.itemNumber {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-top: 0.1rem;
+  border-radius: 50%;
+  background: rgba(120, 128, 241, 0.12);
+  color: var(--accent-primary);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemText {
+  color: var(--font-dark);
+  line-height: 1.65;
+}
+
+.itemText strong {
+  color: var(--font-darker);
+  font-weight: 600;
 }
 
 #internet .header li:last-of-type a {
   text-decoration: none;
-  color: black;
+  color: var(--font-darker);
   font-weight: 600;
-  padding: 5px;
-  transition: color 0.5s ease;
+  transition: color 0.3s ease;
 }
 
 #internet .header li:last-of-type a:hover {
   color: rgb(120 181 201);
 }
 
-/* ---------------------- closingSection ---------------------- */
+/* ---------------------- closingCta ---------------------- */
 
-.closingSection {
-  width: 100%;
-  height: 20vh;
-  background: url(/images/services/banner.jpg) bottom/cover no-repeat;
+.closingCta {
+  position: relative;
+  min-height: 22rem;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 5vw;
+  background: url(/images/services/banner.jpg) center/cover no-repeat;
+}
+
+.closingCta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 14, 22, 0.55),
+    rgba(11, 14, 22, 0.78)
+  );
+}
+
+.closingContent {
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  text-align: center;
+}
+
+.closingCta .eyebrow {
+  color: var(--font-light);
+}
+
+.closingCta h2 {
+  color: var(--font-light);
+  margin: 0.75rem 0 1.75rem;
+}
+
+.closingBtn {
+  background: var(--font-light);
+  color: var(--font-darker);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  padding: 1rem 2.75rem;
+  border-radius: 999px;
+  transition: transform 0.3s ease;
+}
+
+.closingBtn:hover,
+.closingBtn:focus {
+  transform: translateY(-2px);
 }
 
 /* ---------------------- utilities ---------------------- */
@@ -277,6 +389,60 @@ body {
 .flexColumn {
   display: flex;
   flex-direction: column;
+}
+
+/* ---------------------- media tablet + phone ---------------------- */
+
+@media screen and (max-width: 1023px) {
+  .servicesHero {
+    flex-direction: column;
+    text-align: center;
+    padding: 9rem 1.5rem 3rem;
+    gap: 2.5rem;
+  }
+  .heroContent {
+    max-width: none;
+    align-items: center;
+  }
+  .heroContent h2,
+  .heroContent p {
+    max-width: 34rem;
+  }
+  .heroContent .btnPrimary {
+    align-self: center;
+  }
+  .heroImage {
+    width: 100%;
+    max-width: 30rem;
+  }
+  .serviceSummary {
+    padding: 4rem 1.5rem;
+    gap: 2rem;
+  }
+  .summaryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .serviceSection {
+    flex-direction: column;
+    padding: 3.5rem 1.5rem 3.5rem calc(1.5rem + 3rem);
+    gap: 2.5rem;
+  }
+  .serviceSection .header,
+  .serviceSection .imageContainer {
+    max-width: none;
+    width: 100%;
+  }
+  .serviceSection .header {
+    order: 1;
+  }
+  .serviceSection .imageContainer {
+    order: 2;
+    aspect-ratio: 16/9;
+  }
+  .closingCta {
+    min-height: 16rem;
+    padding: 3rem 1.5rem;
+  }
 }
 
 /* ---------------------- media phone ---------------------- */
@@ -292,45 +458,8 @@ body {
   .sideBarItem p {
     display: none;
   }
-  .servicesHeader .banner h2 {
-    width: 90%;
-    font-size: 1.2rem;
-  }
-  .servicesHeader .content {
-    height: fit-content;
-    padding: 4rem 2rem;
-  }
-  .serviceSummary {
-    height: fit-content;
-    padding: 4rem 1rem;
-    gap: 1rem;
-  }
-  .serviceSummary .row {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  .serviceSummary .container {
-    width: 90%;
-    padding: 2rem 2rem 1rem;
-    background: rgba(255, 255, 255, 0.9);
-  }
-  .serviceSummary .container p {
-    color: var(--font-darker);
-  }
-  .serviceSection {
-    height: max-content;
-    margin: 4rem 0;
-  }
-  .serviceSection#sales,
-  .serviceSection#data {
-    margin: 3rem 0;
-  }
-  .serviceSection .header {
-    width: 80vw;
-  }
-  .serviceSection .imageContainer {
-    display: none;
+  .summaryGrid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -345,38 +474,6 @@ body {
     padding: 1rem 0.5rem;
   }
   .sideBarItem p {
-    display: none;
-  }
-  .servicesHeader .banner h2 {
-    width: 90%;
-  }
-  .servicesHeader .content {
-    height: fit-content;
-    padding: 4rem 5rem;
-  }
-  .serviceSummary {
-    height: fit-content;
-    padding: 4rem 1rem;
-    gap: 1rem;
-  }
-  .serviceSummary .row {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  .serviceSummary .container {
-    width: 90%;
-    padding: 2rem 5rem 1rem;
-    background: rgba(255, 255, 255, 0.9);
-  }
-  .serviceSection {
-    margin: 3rem 0;
-    height: max-content;
-  }
-  .serviceSection .header {
-    width: 80vw;
-  }
-  .serviceSection .imageContainer {
     display: none;
   }
 }

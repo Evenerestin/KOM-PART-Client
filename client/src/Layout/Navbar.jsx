@@ -83,6 +83,7 @@ const Navbar = () => {
             aria-label="Menu mobilne"
             role="dialog"
             aria-modal="true"
+            onClick={closeMenu}
           >
             <button
               className="closeMobileNav"
@@ -91,7 +92,7 @@ const Navbar = () => {
             >
               <span aria-hidden="true">×</span>
             </button>
-            <ul className="flexColumn">
+            <ul className="flexColumn" onClick={(e) => e.stopPropagation()}>
               <li className="menuItem" onClick={closeMenu}>
                 <Link
                   to="/"

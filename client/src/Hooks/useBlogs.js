@@ -1,6 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import config from "../config.js";
+import blogApi from "../blogApi.js";
 
 const useBlogs = () => {
   const [blogs, setBlogs] = useState(null);
@@ -10,7 +9,7 @@ const useBlogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get(`${config.api}/api/blog-posts`, {
+        const response = await blogApi.get("/api/blog-posts", {
           params: {
             populate: "CoverImage",
             sort: "publishedAt:desc",

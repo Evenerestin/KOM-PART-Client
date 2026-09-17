@@ -1,5 +1,6 @@
+import { PropTypes } from "prop-types";
 import Logo from "../Components/Logo.jsx";
-import { usePanelAuth } from "./PanelAuthContext.jsx";
+import { usePanelAuth } from "./usePanelAuth.js";
 import "./Panel.css";
 
 const PanelLayout = ({ children }) => {
@@ -21,6 +22,10 @@ const PanelLayout = ({ children }) => {
       <div className="panelContent">{children}</div>
     </div>
   );
+};
+
+PanelLayout.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default PanelLayout;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import Logo from "../Components/Logo.jsx";
-import { usePanelAuth } from "./PanelAuthContext.jsx";
+import { usePanelAuth } from "./usePanelAuth.js";
 import "./Panel.css";
 
 const Login = () => {
@@ -23,8 +23,12 @@ const Login = () => {
     try {
       await login(identifier, password);
       navigate("/panel");
-    } catch {
-      setError("Nieprawidłowa nazwa użytkownika lub hasło.");
+    } catch (err) {
+      setError(
+        err.duringProfileFetch
+          ? "Zalogowano, ale nie udało się pobrać profilu. Spróbuj ponownie."
+          : "Nieprawidłowa nazwa użytkownika lub hasło.",
+      );
     } finally {
       setSubmitting(false);
     }
