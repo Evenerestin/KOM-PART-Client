@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
 import ErrorIcon from "../Assets/ErrorIcon";
+import BlogCoverPlaceholder from "../Components/BlogCoverPlaceholder.jsx";
 import config from "../config.js";
 import useBlogPost from "../Hooks/useBlogPost";
 import "./css/BlogEntry.css";
@@ -35,15 +36,17 @@ const BlogEntry = () => {
         <h3>{Excerpt}</h3>
       </div>
       <div className="blogContent flex">
-        {CoverImage && (
-          <div className="cover gridCenter">
+        <div className="cover gridCenter">
+          {CoverImage ? (
             <img
               src={`${config.api}${CoverImage.url}`}
               aria-hidden="true"
               loading="lazy"
             />
-          </div>
-        )}
+          ) : (
+            <BlogCoverPlaceholder />
+          )}
+        </div>
         <div className="entryMarkdownContent">
           <ReactMarkdown>{Content}</ReactMarkdown>
           <p className="publicationDate">{publishedAt}</p>

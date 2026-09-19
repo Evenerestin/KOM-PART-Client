@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useBlogs from "../Hooks/useBlogs";
 import NotFound from "../Pages/NotFound.jsx";
+import BlogCoverPlaceholder from "../Components/BlogCoverPlaceholder.jsx";
 import config from "../config.js";
 import { formatDate } from "../Utils/formatDate";
 import "./css/Blog.css";
@@ -58,12 +59,14 @@ const Blog = () => {
 
         <Link className="featuredPost flex" to={`/blog/${featured.Slug}`}>
           <div className="featuredCover gridCenter">
-            {featured.CoverImage && (
+            {featured.CoverImage ? (
               <img
                 src={`${config.api}${featured.CoverImage.url}`}
                 alt={featured.Title}
                 loading="lazy"
               />
+            ) : (
+              <BlogCoverPlaceholder />
             )}
           </div>
           <div className="featuredContent flexColumn">
@@ -83,12 +86,14 @@ const Blog = () => {
                 ({ id, Slug, Title, Excerpt, CoverImage, publishedAt }) => (
                   <Link className="postRow flex" key={id} to={`/blog/${Slug}`}>
                     <div className="postThumb gridCenter">
-                      {CoverImage && (
+                      {CoverImage ? (
                         <img
                           src={`${config.api}${CoverImage.url}`}
                           alt={Title}
                           loading="lazy"
                         />
+                      ) : (
+                        <BlogCoverPlaceholder />
                       )}
                     </div>
                     <div className="postRowContent flexColumn">

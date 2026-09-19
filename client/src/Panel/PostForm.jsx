@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import MDEditor from "@uiw/react-md-editor";
+import BlogCoverPlaceholder from "../Components/BlogCoverPlaceholder.jsx";
 import config from "../config.js";
 import PanelLayout from "./PanelLayout.jsx";
 import { createPost, getPost, updatePost, uploadImage } from "./panelApi.js";
@@ -167,8 +168,12 @@ const PostForm = () => {
 
         <div className="panelField">
           <label htmlFor="cover">Zdjęcie okładkowe</label>
-          {(coverPreview || existingCoverUrl) && (
+          {coverPreview || existingCoverUrl ? (
             <img className="panelCoverPreview" src={coverPreview ?? existingCoverUrl} alt="" />
+          ) : (
+            <div className="panelCoverPreview">
+              <BlogCoverPlaceholder />
+            </div>
           )}
           <div className="panelFilePicker">
             <input

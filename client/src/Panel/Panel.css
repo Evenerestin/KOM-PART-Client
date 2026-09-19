@@ -369,6 +369,7 @@
   border: 1px solid var(--panel-line);
   margin-bottom: 12px;
   display: block;
+  overflow: hidden;
 }
 
 /* ---------------------- post list ---------------------- */

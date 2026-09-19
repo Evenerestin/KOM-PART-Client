@@ -76,6 +76,15 @@
   margin: auto;
 }
 
+.blogContent .cover .blogCoverPlaceholder {
+  width: 80%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin: auto;
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
 .blogContent .entryMarkdownContent {
   width: 50%;
   margin: 2rem 0;
