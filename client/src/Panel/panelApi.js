@@ -15,11 +15,18 @@ export function clearToken() {
   localStorage.removeItem(TOKEN_KEY);
 }
 
+function isAuthEndpoint(url) {
+  return Boolean(url?.startsWith("/api/auth/"));
+}
+
 const api = axios.create({ baseURL: config.api, withCredentials: true });
 
 api.interceptors.request.use((req) => {
   const token = getToken();
-  if (token) {
+  // A stale/expired token must never ride along on auth endpoints -- Strapi
+  // rejects the whole request over a bad Authorization header before it
+  // gets to check the credentials or refresh cookie in the body.
+  if (token && !isAuthEndpoint(req.url)) {
     req.headers.Authorization = `Bearer ${token}`;
   }
   return req;
@@ -51,8 +58,7 @@ api.interceptors.response.use(
   (res) => res,
   async (err) => {
     const original = err.config;
-    const isAuthEndpoint = original?.url?.startsWith("/api/auth/");
-    if (err.response?.status === 401 && !original._retried && !isAuthEndpoint) {
+    if (err.response?.status === 401 && !original._retried && !isAuthEndpoint(original?.url)) {
       original._retried = true;
       try {
         await refreshAccessToken();
