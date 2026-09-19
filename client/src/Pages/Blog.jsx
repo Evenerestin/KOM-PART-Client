@@ -7,6 +7,13 @@ import config from "../config.js";
 import { formatDate } from "../Utils/formatDate";
 import "./css/Blog.css";
 
+const skeletonLine = (width, height, className = "") => (
+  <div
+    className={`skeletonLine skeletonShimmer ${className}`.trim()}
+    style={{ width, height }}
+  />
+);
+
 const Blog = () => {
   let { loading, error, blogs } = useBlogs();
   const [delayedLoading, setLoadingDelay] = useState(true);
@@ -20,11 +27,46 @@ const Blog = () => {
 
   if (loading || delayedLoading)
     return (
-      <div className="loadingBlogPage flexColumn">
-        <div className="featuredSkeleton loading" />
-        <div className="rowSkeleton loading" />
-        <div className="rowSkeleton loading" />
-        <div className="rowSkeleton loading" />
+      <div className="loadingBlogPage flexColumn" aria-busy="true">
+        <div className="blogPageInner">
+          <div className="blogPageHeader skeletonHeader">
+            {skeletonLine("4rem", "0.9rem")}
+            {skeletonLine("min(22rem, 80%)", "3.2rem", "skeletonTitle")}
+            <div className="skeletonStack skeletonIntro">
+              {skeletonLine("100%", "1rem")}
+              {skeletonLine("70%", "1rem")}
+            </div>
+          </div>
+
+          <div className="featuredPost flex">
+            <div className="featuredCover skeletonShimmer" />
+            <div className="featuredContent flexColumn skeletonStack">
+              {skeletonLine("7rem", "0.8rem")}
+              {skeletonLine("6rem", "0.75rem")}
+              {skeletonLine("90%", "2.25rem")}
+              {skeletonLine("55%", "2.25rem")}
+              {skeletonLine("100%", "0.9rem")}
+              {skeletonLine("80%", "0.9rem")}
+              {skeletonLine("12rem", "2.9rem", "skeletonPill")}
+            </div>
+          </div>
+
+          <div className="morePostsLabel">{skeletonLine("8rem", "0.8rem")}</div>
+          <div className="postList flexColumn">
+            {[0, 1, 2].map((i) => (
+              <div className="postRow flex" key={i}>
+                <div className="postThumb skeletonShimmer" />
+                <div className="postRowContent flexColumn skeletonStack">
+                  {skeletonLine("6rem", "0.75rem")}
+                  {skeletonLine("65%", "1.55rem")}
+                  {skeletonLine("100%", "0.9rem")}
+                  {skeletonLine("75%", "0.9rem")}
+                  {skeletonLine("7rem", "0.75rem")}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     );
   if (error) {
