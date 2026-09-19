@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import MDEditor from "@uiw/react-md-editor";
 import config from "../config.js";
 import PanelLayout from "./PanelLayout.jsx";
 import { createPost, getPost, updatePost, uploadImage } from "./panelApi.js";
@@ -105,7 +106,7 @@ const PostForm = () => {
     <PanelLayout>
       <div className="panelHeaderRow">
         <h2>{isEditing ? "Edytuj wpis" : "Nowy wpis"}</h2>
-        <button className="panelSecondaryBtn" onClick={() => navigate("/panel")}>
+        <button type="button" className="panelSecondaryBtn" onClick={() => navigate("/panel")}>
           Anuluj
         </button>
       </div>
@@ -152,13 +153,16 @@ const PostForm = () => {
 
         <div className="panelField">
           <label htmlFor="content">Treść (Markdown)</label>
-          <textarea
-            id="content"
-            rows={16}
-            value={form.Content}
-            onChange={(e) => setForm((prev) => ({ ...prev, Content: e.target.value }))}
-            required
-          />
+          <div className="panelMarkdownEditor" data-color-mode="light">
+            <MDEditor
+              id="content"
+              value={form.Content}
+              onChange={(value) => setForm((prev) => ({ ...prev, Content: value ?? "" }))}
+              height={420}
+              preview="live"
+              textareaProps={{ required: true }}
+            />
+          </div>
         </div>
 
         <div className="panelField">
@@ -185,6 +189,7 @@ const PostForm = () => {
 
         <div className="panelFormActions">
           <button
+            type="button"
             className="panelSecondaryBtn"
             onClick={() => handleSave(false)}
             disabled={saving}
@@ -192,6 +197,7 @@ const PostForm = () => {
             {saving ? "Zapisywanie..." : "Zapisz jako szkic"}
           </button>
           <button
+            type="button"
             className="panelPrimaryBtn"
             onClick={() => handleSave(true)}
             disabled={saving}
