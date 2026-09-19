@@ -36,7 +36,7 @@ const BlogEntry = () => {
         <h3>{Excerpt}</h3>
       </div>
       <div className="blogContent flex">
-        <div className="cover gridCenter">
+        <div className={`cover gridCenter${CoverImage ? "" : " coverEmpty"}`}>
           {CoverImage ? (
             <img
               src={`${config.api}${CoverImage.url}`}
