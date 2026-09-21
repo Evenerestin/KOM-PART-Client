@@ -171,6 +171,80 @@
   color: var(--panel-white);
 }
 
+/* ---------------------- confirm modal ---------------------- */
+
+.panelModalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(8, 10, 16, 0.72);
+  backdrop-filter: blur(3px);
+}
+
+.panelModal {
+  width: 100%;
+  max-width: 420px;
+  background: var(--panel-surface-raised);
+  border: 1px solid var(--panel-line);
+  border-radius: var(--panel-radius);
+  padding: 28px 28px 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.panelModal h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--panel-text);
+  margin: 0 0 12px;
+}
+
+.panelModalBody {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--panel-muted);
+  overflow-wrap: anywhere;
+}
+
+.panelModalBody strong {
+  color: var(--panel-text);
+  font-weight: 600;
+}
+
+.panelModalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.panelModalConfirmBtn {
+  background: var(--panel-red);
+  color: var(--panel-white);
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.panelModalConfirmBtn:hover {
+  background: #e11a1a;
+  box-shadow: 0 4px 14px rgba(210, 14, 14, 0.35);
+}
+
+.panelModalConfirmBtn:disabled,
+.panelModalActions .panelSecondaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 /* ---------------------- login ---------------------- */
 
 .panelLoginPage {
