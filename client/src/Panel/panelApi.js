@@ -149,11 +149,13 @@ export async function uploadImage(file) {
   return data[0];
 }
 
+// Strapi's REST create/update default to `status=published` when the param is
+// omitted, so a draft save must ask for "draft" explicitly.
 export async function createPost(payload, publish) {
   const { data } = await api.post(
     "/api/blog-posts",
     { data: payload },
-    { params: publish ? { status: "published" } : {} }
+    { params: { status: publish ? "published" : "draft" } }
   );
   return data.data;
 }
@@ -162,7 +164,7 @@ export async function updatePost(documentId, payload, publish) {
   const { data } = await api.put(
     `/api/blog-posts/${documentId}`,
     { data: payload },
-    { params: publish ? { status: "published" } : {} }
+    { params: { status: publish ? "published" : "draft" } }
   );
   return data.data;
 }
